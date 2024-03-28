@@ -1,3 +1,8 @@
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    padding-bottom: 25px; /* so the last content doesnt hit the edges */
+}
 .header-content {
     display: flex;
     align-items: center;
@@ -29,6 +34,7 @@
     justify-content: space-between;
     margin-left: auto;
     margin-right: 30px; /* Can adjust to make it looks nicer, tried to make the search longer  */
+    z-index: 999; /* this makes the search bar present for mobile */
 }
 
 .search-bar-container input[type="search"] {
@@ -38,6 +44,48 @@
 .search-bar-container button[type="submit"] {
     width: 75px; /* adjust the width  */
 }
+.content{
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 5px;
+    border-color: #333;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    padding-left: 75px;
+}
+/* also do not know how to make the profile crop propperly */
+.profile{
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 70px;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 25px; 
+    overflow: hidden;
+}
+.profile img{
+    width: 100%;
+    height: auto;
+}
+/* ngl these are really huge but i do not know how to safe the quality as well as making it smaller */
+.movie-posters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create a grid with three columns */
+    grid-gap: 20px; /* Adds gap between grid items */
+    height: 300px; /* Set a fixed height for the movie poster container */
+}
+
+.movie-poster {
+    width: 100%; /* Ensure the image fills its container */
+    height: 80%; /* Ensure the image fills its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
 .bg-color{
      background-color: rgb(35,28,29); /* Matching for the logo */
 }
@@ -45,6 +93,11 @@
     background-color: rgb(63 63 70);
 }
 @media only screen and (max-width: 600px) {
+    body{
+        margin:0;
+        padding:0;
+        padding-bottom: 75px; /* increased cause mobile yk */
+    }
     .search-bar-container {
         position: fixed;
         bottom: 0;
@@ -52,7 +105,6 @@
         width: 100%;
         background-color: rgb(63 63 70); /* Idk if you want different bg color for the search */
         padding: 10px; 
-        box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Up to yall to keep it */
     }
     .Home.button,
     .My.Roster {
