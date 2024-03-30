@@ -1,7 +1,36 @@
 body {
+    position: relative;
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     padding-bottom: 25px; /* so the last content doesnt hit the edges */
+}
+.sidebar-left, .sidebar-right {
+    position: absolute;
+    top: 130px;
+    height: 91%; /* Adjust the height as needed */
+    width: 400px; /* Adjust the width as needed */
+    background-color: rgb(246, 195, 195); /* Adjust the background color as needed */
+    filter: brightness(75%);
+}
+
+.sidebar-left {
+    left: 0;
+}
+.new-releases {
+    padding: 10px;
+    z-index: 1000; /* Ensure it's above other content */
+    text-align: center; /* Center the content horizontally */
+    margin: auto; /* Center the content within its container */
+    width: 60%; /* Adjust the width of the section */
+    max-width: 600px; /* Set a maximum width to prevent it from stretching too much */
+    border-radius: 25px;
+}
+.new-releases h2 {
+    font-size: 28px; /* Increase the font size of the heading */
+}
+
+.sidebar-right {
+    right: 0;
 }
 .header-content {
     display: flex;
@@ -55,19 +84,21 @@ body {
     background-color: #f0f0f0;
     box-sizing: border-box;
     padding-left: 75px;
+    border-radius: 15px;
 }
 /* also do not know how to make the profile crop propperly */
 .profile{
     position: absolute;
-    top: 1px;
-    left: 1px;
-    width: 70px;
+    top: 5px;
+    left: 10px;
+    width: 50px;
     height: 50px;
     background-color: #333;
     color: #fff;
     text-align: center;
     line-height: 25px; 
     overflow: hidden;
+    border-radius: 9999px;
 }
 .profile img{
     width: 100%;
@@ -85,6 +116,8 @@ body {
     width: 100%; /* Ensure the image fills its container */
     height: 80%; /* Ensure the image fills its container */
     object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 15px;
+    padding: 1px;
 }
 .bg-color{
      background-color: rgb(35,28,29); /* Matching for the logo */
@@ -107,7 +140,9 @@ body {
         padding: 10px; 
     }
     .Home.button,
-    .My.Roster {
+    .My.Roster,
+    .sidebar-left,
+    .sidebar-right {
         display: none;
     }
     .header-content {
