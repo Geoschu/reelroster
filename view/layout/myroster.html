@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie App</title>
+  <title>ReelRoster</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     html, body {
@@ -32,7 +32,7 @@
 <body class="bg-gray-100 flex flex-col">
   <!-- Top Bar with Logo -->
   <header class="bg-gray-800 p-4 flex items-center justify-center">
-    <img src="logo.png" alt="Logo" class="h-8">
+    <img src="../../public/images/ReelRosterlogo2color.png" alt="Logo" class="h-8">
   </header>
 
   <!-- Main Content -->
@@ -44,7 +44,7 @@
         <div class="bg-white rounded-lg shadow-md p-4 relative">
           <!-- User Profile -->
           <div class="absolute top-0 left-0 bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center">
-            <img src="profile.png" alt="User Profile" class="h-10 w-10 rounded-full">
+            <img src="../../public/images/drake.jpg" alt="User Profile" class="h-10 w-10 rounded-full">
           </div>
           <!-- Title -->
           <h2 class="text-2xl font-semibold mb-4 text-center">My Roster</h2>
@@ -52,9 +52,12 @@
           <!-- Movie Posters Placeholders -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-cols-min gap-4 mt-8">
             <!-- Card 1 -->
-            <div class="bg-gray-200 rounded-lg shadow-md p-4 relative">
+            <div class="bg-gray-200 rounded-lg shadow-md p-4 relative flex">
               <!-- Movie Poster Placeholder -->
-              <div class="bg-gray-200 rounded-lg overflow-hidden aspect-w-2 aspect-h-3"></div>
+              <div class="bg-gray-200 rounded-lg overflow-hidden p-2" style="width: 400px;">
+               <!-- Placeholder Image -->
+        <img src="../../public/images/space_jam.jpg" alt="Movie Poster" class="object-cover w-f h-full" />
+      </div>
               <!-- Movie Information -->
               <div>
                 <h2 class="text-xl font-semibold mb-2">Movie Title 1</h2>
