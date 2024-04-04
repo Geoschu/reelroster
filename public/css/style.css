@@ -178,7 +178,11 @@ body {
 }
 .movie-poster {
     width: 90%; /* Ensure the image fills its container */
+<<<<<<< HEAD
     
+=======
+    height: 90%; /* Ensure the image fills its container */
+>>>>>>> 671b7d0 (redid mainpage)
     object-fit: cover; /* Maintain aspect ratio and cover the container */
     border-radius: 15px;
     padding: 1px;
