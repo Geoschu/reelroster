@@ -1,0 +1,3 @@
+html, body { height: 100%; } /* Replacing dark blue color with #231C1D */
+       .search-box {
+      background-color: var(--gray); border: none; background-color: var(--pink); }
