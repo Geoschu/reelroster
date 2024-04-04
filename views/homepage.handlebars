@@ -199,6 +199,8 @@ document.querySelectorAll('.content').forEach(function(contentDiv, index) {
 
 /* Add bullet point image before each <p> element */
 .content p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
     position: relative;
     padding-left: 70px; /* Adjust as needed to make room for the bullet point image */
     background-image: url('/images/logo.png'); /* Replace 'path/to/bullet-point-image.png' with the actual path to your bullet point image */
@@ -207,21 +209,26 @@ document.querySelectorAll('.content').forEach(function(contentDiv, index) {
     background-size:  40px; /* Adjust the size of the bullet point image */
     padding-bottom: 20px;
     padding-right: 20px;
+    height: 200px; /* Set a fixed height for the <p> element */
+    line-height: 1.5; /* Adjust line height as needed for evenly spaced text */
 
 }
 .content p::before,
 .content p::after {
     color: #e75250; 
     content: '"';
+    font-family: "Raleway", sans-serif;
     font-weight: bold;
     font-size: xx-large;
     text-shadow: -1px -1px 0 #D1D5DB,  
                  1px -1px 0 #D1D5DB,
                  -1px 1px 0 #D1D5DB,
                  1px 1px 0 #D1D5DB;
+                 
 
 }
 .username {
+    font-family: "Raleway", sans-serif;
     font-weight: bold;
     outline-width: 2px;
     color: #e75250;
