@@ -272,9 +272,90 @@ document.querySelectorAll('.content').forEach(function(contentDiv, index) {
     background-image: url('/images/logo.png'); /* Replace 'path/to/bullet-point-image.png' with the actual path to your bullet point image */
     background-repeat: no-repeat;
     background-position: left center; /* Adjust to place the image to the left */
-    background-size: auto 100%; /* Adjust the size of the bullet point image */
+    background-size: auto 70%; /* Adjust the size of the bullet point image */
+    
 }
 .rosterlink:hover {
     box-shadow: 0 0 30px #e75250;/* Increasing shadow on hover */
+}
+
+.content {
+
+}
+
+.search-bar-container {
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.search-bar-container form {
+    position: relative;
+}
+
+.search-bar-container label {
+    display: none; /* Hide label for screen readers */
+}
+
+.search-bar-container input[type="search"] {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar-container input[type="search"]:focus {
+    outline: none;
+    border-color: #e75250; /* Change border color on focus */
+}
+
+.search-bar-container button[type="submit"] {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #e75250;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar-container button[type="submit"]:hover {
+    background-color: #d04542; /* Darken background color on hover */
+}
+
+/* Adjustments for mobile devices */
+@media only screen and (max-width: 768px) {
+    .content {
+        margin-bottom: 40px; /* Add some margin to separate content boxes */
+        position: relative; /* Set position to relative */
+    }
+    .content .movie-posters {
+        text-align: center; /* Center the movie posters */
+    }
+    .content .movie-posters img {
+        display: inline-block; /* Display movie posters inline */
+        margin: 5px; /* Add some margin between movie posters */
+    }
+      .content p {
+        padding: 20px; /* Add padding to the paragraph */
+        position: absolute; /* Position the paragraph absolutely */
+        bottom: 0; /* Align the paragraph to the bottom */
+        left: 10%; /* Align the paragraph to the center horizontally */
+        top: 20%;
+     
+    }
+    .rosterlink {
+        position: absolute; /* Position the roster link absolutely */
+        bottom: 0; /* Align the roster link to the bottom */
+        left: 50%; /* Align the roster link to the center horizontally */
+        transform: translateX(-50%); /* Center the roster link horizontally */
+        margin: 10px 0; /* Add some margin to the roster link */
+    }
 }
 </style>
