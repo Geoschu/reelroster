@@ -17,11 +17,17 @@
                     <a href="/" class="mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Home</a>
                 </div>
                 <div class="My Roster">
-                    <a href="/roster" class=" mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">My Roster</a>
+                    {{#if logged_in}}
+                    <a href="/myroster" class=" mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">My Roster</a>
+                    {{else}}
+                    <a href="/login" class="header-button mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Sign Up/Login</a>
+                    {{/if}}
                 </div>
-                 <div class="header-button">
-                        <a href="/login" class="header-button mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Sign Up/Login</a>
-                    </div>
+                <div class="header-button">
+                    {{#if logged_in}}
+                    <a href="/logout" class="header-button mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded" id="logout">Log out</a>
+                    {{/if}}
+                </div>
                 <div class="search-bar-container">
                     <form class="max-w-md mx-auto">   
                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -78,3 +84,6 @@
             </div>
     </div>\
     <script src="/js/movie-recent.js"></script>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}

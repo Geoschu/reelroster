@@ -15,11 +15,16 @@
   </head>
   <body class='{{bodyClass}}'>
     <header class='bg-darkGray p-4 flex items-center justify-center'>
-      <img src='/images/ReelRosterlogo2color.png' alt='Logo' class='h-8 logo' />
+      <a href="/"><img src='/images/ReelRosterlogo2color.png' alt='Logo' class='h-8 logo' /></a>
       <style>
         .logo { height: 80px; /* Adjust the height as needed */ }
       </style>
     </header>
     {{{body}}}
+    <footer class="bg-darkGray p-4 fixed bottom-0 w-full">
+      <div class="max-w-screen-lg mx-auto">
+        <input type="text" placeholder="Search" class="sm:hidden w-full px-4 py-2 rounded-md search-box text-white placeholder-gray-400 focus:outline-none focus:ring focus:border-blue-300">
+      </div>
+    </footer>
   </body>
 </html>

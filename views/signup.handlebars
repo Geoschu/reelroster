@@ -1,48 +1,63 @@
 <div class="bg-brightRed">
   <div class='flex justify-center items-center h-4/5'>
     <div class='bg-white p-8 rounded-lg shadow-md w-96'>
-      <h2 class='text-2xl font-bold mb-6 text-center'>Login to see your roster</h2>
+      <h2 class='text-2xl font-bold mb-6 text-center'>Sign up</h2>
 
-      <form class='login-form'>
+      <form class='signup-form'>
         <div class='mb-6'>
           <label
-            for='email-login'
+            for='name-signup'
             class='block mb-2 text-sm font-medium'
-          >Email</label>
+          >Username:</label>
           <input
             class='border text-sm rounded-lg block w-full p-2.5'
-            type='text'
-            id='email-login'
-            placeholder='example@email.com'
+            placeholder='Username'
             required
+            type='text'
+            id='name-signup'
           />
         </div>
         <div class='mb-6'>
           <label
-            for='password-login'
+            for='email-signup'
             class='block mb-2 text-sm font-medium'
-          >Password</label>
+          >Email:</label>
           <input
             class='border text-sm rounded-lg block w-full p-2.5'
-            type='password'
-            id='password-login'
+            placeholder='example@email.com'
+            required
+            type='text'
+            id='email-signup'
+          />
+        </div>
+        <div class='mb-6'>
+          <label
+            for='password-signup'
+            class='block mb-2 text-sm font-medium'
+          >Password:</label>
+          <input
+            class='border text-sm rounded-lg block w-full p-2.5'
             placeholder='••••••••'
             required
+            type='password'
+            id='password-signup'
           />
         </div>
         <div class='mt-6 text-center'>
           <button
             class='font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center hover:text-gray-600'
             type='submit'
-          >Login</button>
+          >Sign up</button>
           <button
             class='font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center'
-          ><a class='hover:no-underline hover:text-gray-600' href='/signup'>Sign
-              Up</a></button>
+          ><a
+              href='/login'
+              class='hover:no-underline hover:text-gray-600'
+            >Login</a></button>
         </div>
       </form>
     </div>
   </div>
 </div>
 
-<script src='./js/login.js'></script>
+<script src='./js/signup.js'></script>

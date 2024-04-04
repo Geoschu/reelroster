@@ -51,6 +51,37 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/signup', async (req, res) => {
+  try {
+    const userExists = await User.findOne({ where: { email: req.body.email } });
+
+    if (userExists) {
+      return res
+        .status(400)
+        .json({ message: 'A user with this email already exists.' });
+    }
+
+    const newUser = await User.create({
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    req.session.save(() => {
+      req.session.user_id = newUser.id;
+      req.session.logged_in = true;
+
+      res
+        .status(201)
+        .json({
+          user: newUser,
+          message: 'Account created successfully! You are now logged in.',
+        });
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 // If a POST request is made to /api/users/logout, the function checks the logged_in state in the request.session object and destroys that session if logged_in is true.
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
