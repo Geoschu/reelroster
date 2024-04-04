@@ -41,7 +41,7 @@ router.get('/roster/:id', async (req, res) => {
 
     const roster = rosterData.get({ plain: true });
 
-    res.render('myroster', {
+    res.render('roster', {
       ...roster,
       logged_in: req.session.logged_in
     });
@@ -87,8 +87,8 @@ router.get('/signup', (req, res) => {
   res.render('signup', {styleSheet: '/css/signup.css', bodyClass: 'bg-gray-100'});
 });
 
-router.get('/myroster', (req, res) => {
-  res.render('myroster');
-});
+// router.get('/myroster', (req, res) => {
+//   res.redirect('myroster');
+// });
 
 module.exports = router;

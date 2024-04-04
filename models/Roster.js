@@ -19,11 +19,6 @@ Roster.init(
     roster_ranking: {
       type: DataTypes.INTEGER,
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
     review: {
       type: DataTypes.TEXT,
       allowNull: false,
