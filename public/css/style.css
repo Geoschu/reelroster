@@ -101,6 +101,7 @@ body {
     box-sizing: border-box;
     padding-left: 75px;
     border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow with increased blur and spread */
 }
 /* also do not know how to make the profile crop propperly */
 .profile{
@@ -115,10 +116,14 @@ body {
     line-height: 25px; 
     overflow: hidden;
     border-radius: 9999px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow with increased blur and spread */
+    outline: 4px solid #D1D5DB; /* Add outline */
 }
 .profile img{
     width: 100%;
     height: auto;
+
+
 }
 /* ngl these are really huge but i do not know how to safe the quality as well as making it smaller */
 .movie-posters-recent {
@@ -132,17 +137,24 @@ body {
     grid-template-columns: repeat(3, 1fr); /* Create a grid with three columns */
     grid-gap: 20px; /* Adds gap between grid items */
     height: 300px; /* Set a fixed height for the movie poster container */
+    
 }
 .movie-posters {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Create a grid with three columns */
     grid-gap: 20px; /* Adds gap between grid items */
     height: 300px; /* Set a fixed height for the movie poster container */
+    
 }
 .movie-title{
     display: flex;
     justify-content: center;
     align-self: center;
+    font-size: 16px;
+    margin: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 .movie-poster {
     width: 90%; /* Ensure the image fills its container */
@@ -150,6 +162,9 @@ body {
     object-fit: cover; /* Maintain aspect ratio and cover the container */
     border-radius: 15px;
     padding: 1px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow with increased blur and spread */
+    outline: 2.5px solid #e75250; /* Add outline */
+    margin: 5px;
 }
 .bg-color{
      background-color: rgb(35,28,29); /* Matching for the logo */
