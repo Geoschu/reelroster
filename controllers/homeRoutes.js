@@ -41,7 +41,7 @@ router.get('/roster/:id', async (req, res) => {
 
     const roster = rosterData.get({ plain: true });
 
-    res.render('roster', {
+    res.render('myroster', {
       ...roster,
       logged_in: req.session.logged_in
     });
@@ -50,6 +50,7 @@ router.get('/roster/:id', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -62,6 +63,19 @@ router.get('/profile', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render('profile', {
+=======
+
+router.get('/myroster', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Roster }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('myroster', {
+>>>>>>> 2a92df9 (re-routing myroster)
       ...user,
       logged_in: true
     });
@@ -71,7 +85,6 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
