@@ -1,0 +1,25 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+    <title>Reel Roster</title>
+    <link
+      href='https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css'
+      rel='stylesheet'
+    />
+    <link href='/css/input.css' rel='stylesheet' />
+    <link href='/css/style.css' rel='stylesheet' />
+    <link href='{{styleSheet}}' rel='stylesheet' />
+
+  </head>
+  <body class='{{bodyClass}}'>
+    <header class='bg-darkGray p-4 flex items-center justify-center'>
+      <img src='/images/ReelRosterlogo2color.png' alt='Logo' class='h-8 logo' />
+      <style>
+        .logo { height: 80px; /* Adjust the height as needed */ }
+      </style>
+    </header>
+    {{{body}}}
+  </body>
+</html>

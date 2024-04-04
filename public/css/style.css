@@ -1,3 +1,19 @@
+:root{
+    --darkGray: #231c1d;
+    --brightRed: #e75250;
+    --pink:  #f6c3c3;
+    --gray: #6f6769;
+}
+.bg-darkGray{
+    background-color: var(--darkGray);
+}
+.bg-brightRed{
+    background-color: var(--brightRed);
+}
+.bg-pink{
+    background-color: var(--pink);
+}
+
 body {
     position: relative;
     margin: 0; /* Remove default margin */
@@ -6,7 +22,7 @@ body {
 }
 .sidebar-left, .sidebar-right {
     position: absolute;
-    top: 130px;
+    top: 182px;
     height: 91%; /* Adjust the height as needed */
     width: 400px; /* Adjust the width as needed */
     background-color: rgb(246, 195, 195); /* Adjust the background color as needed */
@@ -45,8 +61,8 @@ body {
 .header-button {
    display: flex;
    align-self: flex-end;
-   margin-left: auto;
-   margin-bottom: 2px;
+   margin-bottom: auto;
+    margin-top: auto;
 }
 .below-header{
     display: flex;
@@ -105,13 +121,29 @@ body {
     height: auto;
 }
 /* ngl these are really huge but i do not know how to safe the quality as well as making it smaller */
+.movie-posters-recent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create a grid with three columns */
+    grid-gap: 20px; /* Adds gap between grid items */
+    height: 300px; /* Set a fixed height for the movie poster container */
+}
+.movie-posters-trend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create a grid with three columns */
+    grid-gap: 20px; /* Adds gap between grid items */
+    height: 300px; /* Set a fixed height for the movie poster container */
+}
 .movie-posters {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Create a grid with three columns */
     grid-gap: 20px; /* Adds gap between grid items */
     height: 300px; /* Set a fixed height for the movie poster container */
 }
-
+.movie-title{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
 .movie-poster {
     width: 100%; /* Ensure the image fills its container */
     height: 80%; /* Ensure the image fills its container */

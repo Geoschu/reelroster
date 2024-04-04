@@ -20,7 +20,8 @@ router.get('/', async (req, res) => {
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       rosters, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
+      bodyClass: "bg-zinc-700"
     });
   } catch (err) {
     res.status(500).json(err);
@@ -76,7 +77,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', {styleSheet: '/css/login.css', bodyClass: 'bg-gray-100'});
 });
 
 module.exports = router;
