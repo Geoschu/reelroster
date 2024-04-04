@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Space Jam",
+    "review": "Space Jam is a cosmic collision of nostalgia and hoops, a slam dunk that sends your heart soaring through the stars. ",
+    "roster_ranking": 1
+  },
+  {
+    "name": "Dune Part 1",
+    "review": "Dune Part 1 is a cinematic odyssey that plunges you into a mesmerizing world of epic proportions. Denis Villeneuve's vision is nothing short of awe-inspiring, a masterclass in storytelling",
+    "roster_ranking": 5
+  },
+  {
+    "name": "Dune Part 2",
+    "review": "Alright, buckle up, because Dune Part 2 is one wild ride! This movie takes everything you loved about the first one and cranks it up to eleven!" ,
+    "roster_ranking": 3
+  }
+]

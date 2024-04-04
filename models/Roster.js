@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Create Project model and datatypes, including the user_id foreign key.
-class Project extends Model {}
+class Roster extends Model {}
 
-Project.init(
+Roster.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,16 +16,16 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
+    roster_ranking: {
+      type: DataTypes.INTEGER,
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
+    review: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     user_id: {
@@ -41,8 +41,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'roster',
   }
 );
 
-module.exports = Project;
+module.exports = Roster;
