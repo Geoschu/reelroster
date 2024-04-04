@@ -145,8 +145,8 @@ body {
     align-self: center;
 }
 .movie-poster {
-    width: 100%; /* Ensure the image fills its container */
-    height: 80%; /* Ensure the image fills its container */
+    width: 90%; /* Ensure the image fills its container */
+    height: 90%; /* Ensure the image fills its container */
     object-fit: cover; /* Maintain aspect ratio and cover the container */
     border-radius: 15px;
     padding: 1px;
