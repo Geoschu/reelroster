@@ -23,11 +23,16 @@ body {
 .sidebar-left, .sidebar-right {
     position: absolute;
     top: 182px;
-    height: 91%; /* Adjust the height as needed */
-    width: 400px; /* Adjust the width as needed */
-    background-color: rgb(246, 195, 195); /* Adjust the background color as needed */
-    filter: brightness(75%);
+    height: 100%; /* Adjust the height as needed */
+    width: 450px; /* Adjust the width as needed */
+    background-color: #ffffff; /* Adjust the background color as needed */
+    filter: brightness(100%);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for the shadow */
 }
+
 
 .sidebar-left {
     left: 0;
@@ -43,6 +48,12 @@ body {
 }
 .new-releases h2 {
     font-size: 28px; /* Increase the font size of the heading */
+    font-family: "Raleway", sans-serif;
+    text-shadow: -1px -1px 0 #D1D5DB,  
+    1px -1px 0 #D1D5DB,
+    -1px 1px 0 #D1D5DB,
+    1px 1px 0 #D1D5DB;
+
 }
 
 .sidebar-right {
@@ -95,12 +106,13 @@ body {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 10px;
-    padding: 5px;
+    padding: 15px;
     border-color: #333;
     background-color: #f0f0f0;
     box-sizing: border-box;
     padding-left: 75px;
     border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow with increased blur and spread */
 }
 /* also do not know how to make the profile crop propperly */
 .profile{
@@ -115,10 +127,14 @@ body {
     line-height: 25px; 
     overflow: hidden;
     border-radius: 9999px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow with increased blur and spread */
+    outline: 4px solid #D1D5DB; /* Add outline */
 }
 .profile img{
     width: 100%;
     height: auto;
+
+
 }
 /* ngl these are really huge but i do not know how to safe the quality as well as making it smaller */
 .movie-posters-recent {
@@ -132,30 +148,55 @@ body {
     grid-template-columns: repeat(3, 1fr); /* Create a grid with three columns */
     grid-gap: 20px; /* Adds gap between grid items */
     height: 300px; /* Set a fixed height for the movie poster container */
+    
 }
 .movie-posters {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Create a grid with three columns */
     grid-gap: 20px; /* Adds gap between grid items */
     height: 300px; /* Set a fixed height for the movie poster container */
+    
 }
 .movie-title{
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-self: center;
+    font-size: 16px;
+    margin: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: -1px -1px 0 #D1D5DB,  
+    1px -1px 0 #D1D5DB,
+    -1px 1px 0 #D1D5DB,
+    1px 1px 0 #D1D5DB;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Limiting to 2 lines */
+
 }
 .movie-poster {
-    width: 100%; /* Ensure the image fills its container */
-    height: 80%; /* Ensure the image fills its container */
+    width: 90%; /* Ensure the image fills its container */
+    
     object-fit: cover; /* Maintain aspect ratio and cover the container */
     border-radius: 15px;
     padding: 1px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow with increased blur and spread */
+    outline: 2.5px solid #e75250; /* Add outline */
+    margin: 5px;
+    
 }
+
+.movie-poster:hover {
+    box-shadow: 0 0 30px #e75250;/* Increasing shadow on hover */
+}
+
 .bg-color{
      background-color: rgb(35,28,29); /* Matching for the logo */
 }
 .bg-zinc-700{
-    background-color: rgb(63 63 70);
+    background-color: #e75250;
 }
 @media only screen and (max-width: 600px) {
     body{
@@ -212,3 +253,9 @@ body {
         width: 100%;
     }
 }
+.raleway-<uniquifier> {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
