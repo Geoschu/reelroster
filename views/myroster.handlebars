@@ -1,0 +1,43 @@
+<div class='bg-brightRed'>
+  <div class='flex justify-center items-center h-4/5'>
+    <div class='bg-white p-8 rounded-lg shadow-md w-96'>
+      <div>
+        <h3 class="text-center font-semibold text-2xl">Add to Roster</h3>
+
+        <form class="new-roster-form">
+          <div class="">
+            <label>Movie Title</label>
+             <input class="" type="text" id="movie-name"/>
+          </div>
+          <div class="">
+            <label>Roster Ranking</label>
+            <input class="" type="number" id="roster-ranking"/>
+          </div>
+          <div class="">
+           <label>Review</label>
+           <textarea class="" id="roster-review"></textarea>
+          </div>
+          <div class="">
+            <button type="submit" class="">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{#if roster.length}}
+  <div class="roster-list">
+    <h3>My Roster</h3>
+
+    {{#each roster as |roster|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{roster.id}}">{{roster.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{roster.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
