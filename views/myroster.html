@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReelRoster</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    /* Replacing dark blue color with #231C1D */
+    .bg-gray-800 {
+      background-color: #231C1D !important;
+    }
+    /* Replacing lighter blue color with #E75250 */
+    .bg-gray-100 {
+      background-color: #E75250 !important;
+    }
+    /* Replacing card backgrounds with #F6C3C3 */
+    .bg-gray-200 {
+      background-color: #F6C3C3 !important;
+    }
+    /* Changing search box color to #6F6769 and text color to #F6C3C3 */
+    .search-box {
+      background-color: #6F6769;
+      border: none;
+      color: #F6C3C3;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex flex-col">
+  <!-- Handlebars Templates -->
+  <script id="movie-template" type="text/x-handlebars-template">
+    <div class="bg-gray-200 rounded-lg shadow-md p-4 relative flex">
+      <div class="bg-gray-200 rounded-lg overflow-hidden p-2" style="width: 400px;">
+        <img src="{{ poster }}" alt="Movie Poster" class="object-cover w-full h-full" />
+      </div>
+      <div>
+        <h2 class="text-xl font-semibold mb-2">{{ title }}</h2>
+        <p class="text-gray-600">{{ description }}</p>
+      </div>
+    </div>
+  </script>
+
+  <!-- Top Bar with Logo -->
+  <header class="bg-gray-800 p-4 flex items-center justify-center">
+    <img src="../../public/images/ReelRosterlogo2color.png" alt="Logo" class="h-8 logo">
+    <style>.logo { height: 80px; }</style>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex flex-col">
+    <!-- Movie Posters and Review -->
+    <div class="p-4 flex-grow">
+      <div class="max-w-screen-lg mx-auto">
+        <!-- Card with User Profile and Movie Posters -->
+        <div class="bg-white rounded-lg shadow-md p-4 relative">
+          <div class="absolute top-0 left-0 bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center">
+            <img src="../../public/images/drake.jpg" alt="User Profile" class="h-10 w-10 rounded-full">
+          </div>
+          <h2 class="text-2xl font-semibold mb-4 text-center">My Roster</h2>
+          <div id="movie-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-cols-min gap-4 mt-8">
+            <!-- Movies will be rendered here dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar with Search Box (Fixed Position) -->
+    <footer class="bg-gray-800 p-4 fixed bottom-0 w-full">
+      <div class="max-w-screen-lg mx-auto">
+        <input type="text" placeholder="Search" class="w-full px-4 py-2 rounded-md search-box text-white placeholder-gray-400 focus:outline-none focus:ring focus:border-blue-300">
+      </div>
+    </footer>
+  </main>
+
+  <!-- Handlebars.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <script>
+    // Sample data for movies
+    const moviesData = [
+      { title: 'Movie Title 1', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.', poster: '../../public/images/space_jam.jpg' },
+      { title: 'Movie Title 2', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.', poster: '../../public/images/dune_2.jpg' },
+      { title: 'Movie Title 3', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.', poster: '../../public/images/dune.jpg' },
+      { title: 'Movie Title 4', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.', poster: '../../public/images/space_jam.jpg' },
+      // Add more movie data here as needed
+    ];
+
+    // Compile Handlebars template
+    const movieTemplate = Handlebars.compile(document.getElementById("movie-template").innerHTML);
+
+    // Render movies
+    moviesData.forEach(movie => {
+      const html = movieTemplate(movie);
+      document.getElementById("movie-container").insertAdjacentHTML('beforeend', html);
+    });
+  </script>
+</body>
+</html>
