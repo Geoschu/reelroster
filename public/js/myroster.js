@@ -1,9 +1,9 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#roster-name').value.trim();
+  const name = document.querySelector('#movie-name').value.trim();
   const roster_ranking = document.querySelector('#roster-ranking').value.trim();
-  const review = document.querySelector('#roster-rev').value.trim();
+  const review = document.querySelector('#roster-review').value.trim();
 
   if (name && roster_ranking && review) {
     const response = await fetch(`/api/roster`, {
@@ -15,7 +15,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/myroster');
     } else {
       alert('Failed to create roster');
     }
@@ -31,7 +31,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/myroster');
     } else {
       alert('Failed to delete roster');
     }
