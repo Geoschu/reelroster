@@ -185,5 +185,16 @@ document.querySelectorAll('.content').forEach(function(contentDiv, index) {
  opacity: 1;
 }
 
+/* Add bullet point image before each <p> element */
+.content p {
+    position: relative;
+    padding-left: 70px; /* Adjust as needed to make room for the bullet point image */
+    background-image: url('/images/logo.png'); /* Replace 'path/to/bullet-point-image.png' with the actual path to your bullet point image */
+    background-repeat: no-repeat;
+    background-position: 0 top;
+    background-size:  40px; /* Adjust the size of the bullet point image */
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
 
 </style>
