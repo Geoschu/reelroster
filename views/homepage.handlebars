@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="sidebar-left"> <!-- Left sidebar content here -->
         <div class="new-releases">
             <h2 class="bg-rose-500 font-bold rounded-lg ">NEW RELEASES</h2>
@@ -366,3 +367,25 @@ document.querySelectorAll('.content').forEach(function(contentDiv, index) {
     }
 }
 </style>
+
+<script>
+let originalContent = [];
+$('.content.shadow-md').slice(0, 4).each(function() {
+  originalContent.push($(this).html());
+});
+
+let contentCounter = 0;
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+    addNewContentBox();
+  }
+});
+
+function addNewContentBox() {
+  const newBox = `<div class="content shadow-md">${originalContent[contentCounter % 4]}</div>`;
+  $('.content.shadow-md').last().after(newBox);
+  contentCounter++;
+}
+
+</script>
