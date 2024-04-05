@@ -1,437 +1,437 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<div class="sidebar-left"> <!-- Left sidebar content here -->
-        <div class="new-releases">
-            <h2 class="bg-rose-500 font-bold rounded-lg ">NEW RELEASES</h2>
+<script
+  src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'
+></script>
+<div class='sidebar-left'>
+  <!-- Left sidebar content here -->
+  <div class='new-releases'>
+    <h2 class='bg-rose-500 font-bold rounded-lg'>NEW RELEASES</h2>
+  </div>
+  <div class='movie-posters-recent'></div>
+</div>
+<div class='sidebar-right'>
+  <div class='new-releases'>
+    <h2 class='bg-rose-500 font-bold rounded-lg'>TRENDING</h2>
+  </div>
+  <div class='movie-posters-trend'></div>
+</div>
+<div class='ReelRoster'>
+  <div class='wrapper'>
+    <div class='below-header'>
+      <div class='Home button'>
+        <a
+          href='/'
+          class='mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300'
+        >Home</a>
+      </div>
+
+      <div class='My Roster'>
+        {{#if logged_in}}
+          <a
+            href='/myroster'
+            class='mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300'
+          >My Roster</a>
+        {{else}}
+          <a
+            href='/login'
+            class='header-button mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300'
+          >Sign Up/Login</a>
+        {{/if}}
+      </div>
+
+      <div class='header-button'>
+        {{#if logged_in}}
+          <a
+            href='/logout'
+            class='header-button mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300'
+            id='logout'
+          >Log out</a>
+        {{/if}}
+      </div>
+
+      <div class='search-bar-container'>
+        <form class='max-w-md mx-auto'>
+          <label
+            for='default-search'
+            class='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white'
+          >Search</label>
+          <div class='relative'>
+            <div
+              class='absolute inset-y-0 start-0 flex items-center pl-5 pointer-events-none'
+            >
+              <svg
+                class='w-4 h-4 text-gray-500 dark:text-gray-400'
+                aria-hidden='true'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 20 20'
+              >
+                <path
+                  stroke='currentColor'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z'
+                />
+              </svg>
+            </div>
+            <input
+              type='search'
+              id='default-search'
+              class='block p-4 pl-14 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-rose-500 focus:border-rose-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-rose-500 dark:focus:border-rose-500 transition duration-300'
+              placeholder='Search Movies, Creators...'
+              style='width: 400px;'
+              required
+            />
+            <button
+              type='submit'
+              class='text-white absolute end-.5 bottom-.5 bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-rose-500 dark:hover:bg-rose-600 dark:focus:ring-rose-200 transition duration-300'
+            >Search</button>
+          </div>
+        </form>
+      </div>
+
+      <div class='mobile-container'>
+        <div class='header-button-mobile'>
+          <a
+            href='/login'
+            class='mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300'
+          >Sign Up/Login</a>
         </div>
-           <div class="movie-posters-recent"></div>
+      </div>
+
     </div>
-<div class="sidebar-right">
-          <div class="new-releases">
-                 <h2 class="bg-rose-500 font-bold rounded-lg">TRENDING</h2>
-           </div>
-           <div class="movie-posters-trend"></div>
+    <!-- idk why but deleting this messes up the below-header class -->
+
+  </div>
+  <!-- idk why but deleting this messes up the below-header class -->
+  <div class='content shadow-md'>
+    <div class='profile bg-white shadow-md'>
+      <img src='/images/drake.jpg' alt='Drake' />
     </div>
-    <div class="ReelRoster">
-        <div class="wrapper">
-            <div class="below-header">
-                <div class="Home button">
-                    <a href="/" class="mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Home</a>
-                </div>
-               <div class="My Roster">
-                    {{#if logged_in}}
-                    <a href="/myroster" class=" mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">My Roster</a>
-                    {{else}}
-                    <a href="/login" class="header-button mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Sign Up/Login</a>
-                    {{/if}}
-                </div>
-                <div class="header-button">
-                    <a href="/logout" class="header-button mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded" id="logout">Log out</a>
-                </div>
-                
-                <div class="search-bar-container">
-                    <form class="max-w-md mx-auto">   
-                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                                </svg>
-                            </div>
-                            <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-rose-500 focus:border-rose-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-rose-500 dark:focus:border-rose-500" placeholder="Search Movies, Creators..." required />
-                            <button type="submit" class="text-black absolute end-2.5 bottom-2.5 bg-rose-500 hover:bg-rose-200 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-rose-500 dark:hover:bg-rose-200 dark:focus:ring-rose-200">Search</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="mobile-container">
-                    <div class="header-button-mobile">
-                        <a href="/login" class="mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Sign Up/Login</a>
-                    </div>
-            </div> <!-- idk why but deleting this messes up the below-header class -->
-            
-           </div>  <!-- idk why but deleting this messes up the below-header class -->
-            <div class="content shadow-md"> 
-                    <div class="profile bg-white shadow-md">
-                        <img  src="/images/drake.jpg" alt="Drake">
-                    </div>
-                    <div class="username">
-        @champagnepapi
+    <div class='username'>
+      @champagnepapi
     </div>
-                    <div class="movie-posters">
-                        <img class="movie-poster" src="/images/dune.jpg" alt="Movie Poster 1">
-                        <img class="movie-poster" src="/images/dune_2.jpg" alt="Movie Poster 2">
-                        <img class="movie-poster" src="/images/space_jam.jpg" alt="Movie Poster 3">
-                    </div>
-                        <p id="content1-p">"Dune is an interstellar journey that's out of this world. From the desert sands to the cosmic depths, it's a visual feast that's as epic as a chart-topping track. With mind-bending effects and a stellar cast, this sci-fi saga transports you to realms beyond imagination. Whether you're a spice aficionado or a seeker of destiny, Dune delivers the goods with style and swagger. Strap in for a cinematic ride that's as smooth as my flow - this one's a certified banger."</p>
-                        <div class="rosterlink">
-        check my ReelRoster
+    <div class='movie-posters'>
+      <img class='movie-poster' src='/images/dune.jpg' alt='Movie Poster 1' />
+      <img class='movie-poster' src='/images/dune_2.jpg' alt='Movie Poster 2' />
+      <img
+        class='movie-poster'
+        src='/images/space_jam.jpg'
+        alt='Movie Poster 3'
+      />
     </div>
-                </div>
-            <div class="content shadow-md"> 
-                <div class="profile">
-                    <img  src="/images/scorsese.jpg" alt="Martin Scorsese">
-                </div>
-                <div class="username">
-        @scorsese
+    <p id='content1-p'>"Dune is an interstellar journey that's out of this
+      world. From the desert sands to the cosmic depths, it's a visual feast
+      that's as epic as a chart-topping track. With mind-bending effects and a
+      stellar cast, this sci-fi saga transports you to realms beyond
+      imagination. Whether you're a spice aficionado or a seeker of destiny,
+      Dune delivers the goods with style and swagger. Strap in for a cinematic
+      ride that's as smooth as my flow - this one's a certified banger."</p>
+    <div class='rosterlink'>
+      <a href='/drake'>Check my ReelRoster</a>
     </div>
-                <div class="movie-posters">
-                    <img class="movie-poster" src="/images/2001.jpg" alt="Movie Poster 1">
-                    <img class="movie-poster" src="/images/citizenkane.jpg" alt="Movie Poster 2">
-                    <img class="movie-poster" src="/images/vertigo.jpg" alt="Movie Poster 3">
-                </div>
-                <p id="content2-p"> "Vertigo transcends the boundaries of mere suspense, delving deep into the labyrinth of obsession and desire. Hitchcock's mastery of visual storytelling is on full display, weaving a hypnotic web of intrigue that ensnares the viewer from start to finish. With every frame meticulously crafted, Vertigo is a haunting exploration of identity and illusion, leaving an indelible mark on cinema history. A mesmerizing masterpiece that continues to captivate audiences, revealing new layers with each viewing. In the words of Hitchcock himself, 'I enjoy playing the audience like a piano.' And oh, how he plays it beautifully."</p>
-            <div class="rosterlink">
-        check my ReelRoster
+  </div>
+  <div class='content shadow-md'>
+    <div class='profile'>
+      <img src='/images/scorsese.jpg' alt='Martin Scorsese' />
     </div>
-            </div>
-            <div class="content shadow-md"> 
-                <div class="profile">
-                    <img  src="/images/rock.jpg" alt="The Rock">
-                </div>
-                 <div class="username">
-        @therock
+    <div class='username'>
+      @scorsese
     </div>
-                <div class="movie-posters">
-                    <img class="movie-poster" src="/images/diehard.jpg" alt="Movie Poster 1">
-                    <img class="movie-poster" src="/images/rocky.jpg" alt="Movie Poster 2">
-                    <img class="movie-poster" src="/images/warriors.jpg" alt="Movie Poster 3">
-                </div>
-                <p id="content3-p"> "Warriors, come out to play! 'The Warriors' is an electrifying ride through the neon-lit streets of 1970s New York City. With adrenaline-pumping action and a gritty urban backdrop, this cult classic is a powerhouse of excitement. The Rock's muscles may be big, but they've got nothing on the sheer muscle of this film's raw intensity. It's a rollercoaster of survival and brotherhood that'll have you rooting for the underdogs every step of the way. Can you dig it? Absolutely."</p>
-            <div class="rosterlink">
-        check my ReelRoster
+    <div class='movie-posters'>
+      <img class='movie-poster' src='/images/2001.jpg' alt='Movie Poster 1' />
+      <img
+        class='movie-poster'
+        src='/images/citizenkane.jpg'
+        alt='Movie Poster 2'
+      />
+      <img
+        class='movie-poster'
+        src='/images/vertigo.jpg'
+        alt='Movie Poster 3'
+      />
     </div>
-            </div>
-            <div class="content shadow-md"> 
-                <div class="profile">
-                    <img  src="/images/keanu.jpg" alt="Keanu Reeves">
-                </div>
-                <div class="username">
-        @iamtheone
+    <p id='content2-p'>
+      "Vertigo transcends the boundaries of mere suspense, delving deep into the
+      labyrinth of obsession and desire. Hitchcock's mastery of visual
+      storytelling is on full display, weaving a hypnotic web of intrigue that
+      ensnares the viewer from start to finish. With every frame meticulously
+      crafted, Vertigo is a haunting exploration of identity and illusion,
+      leaving an indelible mark on cinema history. A mesmerizing masterpiece
+      that continues to captivate audiences, revealing new layers with each
+      viewing. In the words of Hitchcock himself, 'I enjoy playing the audience
+      like a piano.' And oh, how he plays it beautifully."</p>
+    <div class='rosterlink'>
+      <a href='/scoresese'>Check my ReelRoster</a>
     </div>
-                <div class="movie-posters">
-                    <img class="movie-poster" src="/images/chungking.jpg" alt="Movie Poster 1">
-                    <img class="movie-poster" src="/images/goodbadugly.jpg" alt="Movie Poster 2">
-                    <img class="movie-poster" src="/images/sevensamurai.jpg" alt="Movie Poster 3">
-                </div>
-                <p id="content4-p"> "Chungking Express... Whoa. This film, it's like riding a rollercoaster through the streets of Hong Kong. The visuals, man, they hit you like a punch to the gut. It's like you're swept up in this whirlwind of neon lights, fast-paced action, and heartfelt moments. The way Wong Kar-wai captures the rhythm of the city, it's like poetry in motion. And those characters, they stick with you, man. You feel their loneliness, their longing, their search for connection in this chaotic world. Chungking Express, it's a trip you won't soon forget."</p>
-           <div class="rosterlink">
-        check my ReelRoster
+  </div>
+  <div class='content shadow-md'>
+    <div class='profile'>
+      <img src='/images/rock.jpg' alt='The Rock' />
     </div>
-            </div>
-    </div>\
-    <script src="/js/movie-recent.js"></script>
-    <script>// Array of content to rotate
-var contentArray1 = [
-    'Dune is an interstellar journey thats out of this world. From the desert sands to the cosmic depths, its a visual feast thats as epic as a chart-topping track. With mind-bending effects and a stellar cast, this sci-fi saga transports you to realms beyond imagination. Whether youre a spice aficionado or a seeker of destiny, Dune delivers the goods with style and swagger. Strap in for a cinematic ride thats as smooth as my flow - this ones a certified banger.',
-    'Space Jam is a slam dunk of nostalgia and fun! From the court to the cartoon cosmos, this flick blends b-ball with Looney Tunes in the sickest crossover ever. With laughs, jams, and a vibe thats out of this world, its a flick that hits all the right notes. Whether youre ballin like MJ or just chillig with Bugs, Space Jam brings the hype. So lace up your kicks and get ready to fly - this movies got game!',
-    'Dune Part 2 aint just a sequel, its a whole new universe. From the sands of Arrakis to the depths of political intrigue, this flick keeps the vibes lit. With epic battles and plot twists sharper than a fresh fade, its a journey thatll leave you craving more. Whether youre a Fremen warrior or just vibing with the spice, this movies got something for everyone. So grab your popcorn and get ready to ride the sandworm - Dune Part 2 is the wave you dont wanna miss.'
-];
+    <div class='username'>
+      @therock
+    </div>
+    <div class='movie-posters'>
+      <img
+        class='movie-poster'
+        src='/images/diehard.jpg'
+        alt='Movie Poster 1'
+      />
+      <img class='movie-poster' src='/images/rocky.jpg' alt='Movie Poster 2' />
+      <img
+        class='movie-poster'
+        src='/images/warriors.jpg'
+        alt='Movie Poster 3'
+      />
+    </div>
+    <p id='content3-p'>
+      "Warriors, come out to play! 'The Warriors' is an electrifying ride
+      through the neon-lit streets of 1970s New York City. With
+      adrenaline-pumping action and a gritty urban backdrop, this cult classic
+      is a powerhouse of excitement. The Rock's muscles may be big, but they've
+      got nothing on the sheer muscle of this film's raw intensity. It's a
+      rollercoaster of survival and brotherhood that'll have you rooting for the
+      underdogs every step of the way. Can you dig it? Absolutely."</p>
+    <div class='rosterlink'>
+      check my ReelRoster
+    </div>
+  </div>
+  <div class='content shadow-md'>
+    <div class='profile'>
+      <img src='/images/keanu.jpg' alt='Keanu Reeves' />
+    </div>
+    <div class='username'>
+      @iamtheone
+    </div>
+    <div class='movie-posters'>
+      <img
+        class='movie-poster'
+        src='/images/chungking.jpg'
+        alt='Movie Poster 1'
+      />
+      <img
+        class='movie-poster'
+        src='/images/goodbadugly.jpg'
+        alt='Movie Poster 2'
+      />
+      <img
+        class='movie-poster'
+        src='/images/sevensamurai.jpg'
+        alt='Movie Poster 3'
+      />
+    </div>
+    <p id='content4-p'>
+      "Chungking Express... Whoa. This film, it's like riding a rollercoaster
+      through the streets of Hong Kong. The visuals, man, they hit you like a
+      punch to the gut. It's like you're swept up in this whirlwind of neon
+      lights, fast-paced action, and heartfelt moments. The way Wong Kar-wai
+      captures the rhythm of the city, it's like poetry in motion. And those
+      characters, they stick with you, man. You feel their loneliness, their
+      longing, their search for connection in this chaotic world. Chungking
+      Express, it's a trip you won't soon forget."</p>
+    <div class='rosterlink'>
+      check my ReelRoster
+    </div>
+  </div>
+</div>\
+<script src='/js/movie-recent.js'></script>
+<script>// Array of content to rotate var contentArray1 = [ 'Dune is an
+  interstellar journey thats out of this world. From the desert sands to the
+  cosmic depths, its a visual feast thats as epic as a chart-topping track. With
+  mind-bending effects and a stellar cast, this sci-fi saga transports you to
+  realms beyond imagination. Whether youre a spice aficionado or a seeker of
+  destiny, Dune delivers the goods with style and swagger. Strap in for a
+  cinematic ride thats as smooth as my flow - this ones a certified banger.',
+  'Space Jam is a slam dunk of nostalgia and fun! From the court to the cartoon
+  cosmos, this flick blends b-ball with Looney Tunes in the sickest crossover
+  ever. With laughs, jams, and a vibe thats out of this world, its a flick that
+  hits all the right notes. Whether youre ballin like MJ or just chillig with
+  Bugs, Space Jam brings the hype. So lace up your kicks and get ready to fly -
+  this movies got game!', 'Dune Part 2 aint just a sequel, its a whole new
+  universe. From the sands of Arrakis to the depths of political intrigue, this
+  flick keeps the vibes lit. With epic battles and plot twists sharper than a
+  fresh fade, its a journey thatll leave you craving more. Whether youre a
+  Fremen warrior or just vibing with the spice, this movies got something for
+  everyone. So grab your popcorn and get ready to ride the sandworm - Dune Part
+  2 is the wave you dont wanna miss.' ]; var contentArray2 = [ '2001: A Space
+  Odyssey, its not just a film, its a transcendent experience, a journey into
+  the very depths of cinematic mastery. Stanley Kubricks vision, its like a
+  symphony of sight and sound, each frame meticulously crafted, every moment
+  pregnant with meaning. From the enigmatic monolith to the haunting strains of
+  Richard Strauss Thus Spoke Zarathustra, its a film that challenges and
+  mesmerizes in equal measure. The special effects, ahead of their time, still
+  hold up today, leaving audiences in awe of their sheer audacity. 2001: A Space
+  Odyssey, its a landmark in cinema, a testament to the power of storytelling,
+  and a timeless exploration of humanitys place in the cosmos.', 'Citizen Kane,
+  a masterpiece of American cinema, stands as a towering achievement in
+  storytelling and innovation. Orson Welles directorial debut is a revelation, a
+  symphony of visual and narrative brilliance that continues to inspire
+  filmmakers to this day. The films non-linear narrative and deep psychological
+  exploration of its enigmatic protagonist, Charles Foster Kane, are executed
+  with precision and insight. Welles use of deep focus and innovative camera
+  techniques revolutionized the language of cinema, setting new standards for
+  cinematic storytelling. Citizen Kane remains a timeless classic, its impact
+  echoing through generations, inviting viewers to delve into the complexities
+  of ambition, power, and the human condition.', 'Vertigo transcends the
+  boundaries of mere suspense, delving deep into the labyrinth of obsession and
+  desire. Hitchcocks mastery of visual storytelling is on full display, weaving
+  a hypnotic web of intrigue that ensnares the viewer from start to finish. With
+  every frame meticulously crafted, Vertigo is a haunting exploration of
+  identity and illusion, leaving an indelible mark on cinema history. A
+  mesmerizing masterpiece that continues to captivate audiences, revealing new
+  layers with each viewing. In the words of Hitchcock himself, I enjoy playing
+  the audience like a piano. And oh, how he plays it beautifully.' ]; var
+  contentArray3 = [ 'Listen up, people! Die Hard? Its the ultimate
+  adrenaline-fueled thrill ride, baby! Bruce Willis, hes like a one-man wrecking
+  crew, taking on terrorists with style and attitude. The action? Its off the
+  charts, explosions galore, and every stunts like, Boom! Take that! Alan
+  Rickman as the villain? Pure gold, man, pure gold. Youre on the edge of your
+  seat the whole time, feeling the intensity like a punch to the gut. Die Hard,
+  its not just a movie, its a full-blown action extravaganza thatll leave you
+  cheering for more!', 'Alright, listen up, jabronis! Rocky, its not just a
+  movie, its a knockout masterpiece! Sylvester Stallone, hes like a force of
+  nature, rising from the mean streets of Philly to take on the champ with heart
+  and determination. The training montages? Theyre like Rockys own personal
+  anthem, pumping you up and making you believe anythings possible! And that
+  final fight? Its like thunder and lightning crashing down in the ring, baby!
+  Rocky, its not just about boxing, its about fighting for your dreams and never
+  giving up. Its the peoples champion of movies, and itll leave you chanting Yo,
+  Adrian! all night long!', 'Warriors, come out to play! The Warriors is an
+  electrifying ride through the neon-lit streets of 1970s New York City. With
+  adrenaline-pumping action and a gritty urban backdrop, this cult classic is a
+  powerhouse of excitement. The Rocks muscles may be big, but theyve got nothing
+  on the sheer muscle of this films raw intensity. Its a rollercoaster of
+  survival and brotherhood thatll have you rooting for the underdogs every step
+  of the way. Can you dig it? Absolutely.' ]; var contentArray4 = [ 'Chungking
+  Express... Whoa. This film, its like riding a rollercoaster through the
+  streets of Hong Kong. The visuals, man, they hit you like a punch to the gut.
+  Its like youre swept up in this whirlwind of neon lights, fast-paced action,
+  and heartfelt moments. The way Wong Kar-wai captures the rhythm of the city,
+  its like poetry in motion. And those characters, they stick with you, man. You
+  feel their loneliness, their longing, their search for connection in this
+  chaotic world. Chungking Express, its a trip you wont soon forget.', 'Whoa,
+  dude, The Good, The Bad, and The Ugly... its like a wild ride into the heart
+  of the Wild West. The landscapes, theyre vast and haunting, like something out
+  of a dream. And the showdowns, theyre intense, like you can feel the tension
+  crackling in the air. Clint Eastwood, man, hes just the epitome of cool in
+  this film. The way he squints and handles that revolver, its iconic. And the
+  music, its like its telling a story of its own, building up the suspense until
+  its almost too much to handle. The Good, The Bad, and The Ugly... its a
+  classic, bro, one you gotta experience for yourself.', 'Whoa, The Good, The
+  Bad, and The Ugly... its like this epic journey across the blistering desert,
+  man. The tension, its like a high noon standoff that lasts for days. Clint
+  Eastwood, hes just, like, effortlessly cool, you know? And that Ennio
+  Morricone score, its like its speaking directly to your soul, man. The
+  cinematography, its like every frame is a work of art, painting this rugged,
+  gritty world. The Good, The Bad, and The Ugly... its not just a movie, dude,
+  its an experience.' ]; // Function to rotate content for a specific <p>
+  element function rotateContentForP(pElement, contentArray) { var currentIndex
+  = contentArray.indexOf(pElement.textContent); var nextIndex = (currentIndex +
+  1) % contentArray.length; pElement.textContent = contentArray[nextIndex]; //
+  Start fade-out pElement.style.opacity = 1; // Start fully visible (function
+  fadeOut() { if ((pElement.style.opacity -= 0.7) < 0) { pElement.style.opacity
+  = 0; // Ensure it's fully transparent // Start fade-in after fade-out
+  completes (function fadeIn() { if ((pElement.style.opacity += 0.7) > 1) {
+  pElement.style.opacity = 1; // Ensure it's fully visible } else {
+  requestAnimationFrame(fadeIn); } })(); } else {
+  requestAnimationFrame(fadeOut); } })(); } // Apply rotation to each <p>
+  element within a content div
+  document.querySelectorAll('.content').forEach(function(contentDiv, index) {
+  var pElement = contentDiv.querySelector('p'); var contentArray; switch(index)
+  { case 0: contentArray = contentArray1; break; case 1: contentArray =
+  contentArray2; break; case 2: contentArray = contentArray3; break; case 3:
+  contentArray = contentArray4; // Added case for the fourth <p> element break;
+  } // Set initial content pElement.textContent = contentArray[0]; // Rotate
+  content every 8 seconds setInterval(function() { rotateContentForP(pElement,
+  contentArray); }, 8000); });
 
-var contentArray2 = [
-    '2001: A Space Odyssey, its not just a film, its a transcendent experience, a journey into the very depths of cinematic mastery. Stanley Kubricks vision, its like a symphony of sight and sound, each frame meticulously crafted, every moment pregnant with meaning. From the enigmatic monolith to the haunting strains of Richard Strauss Thus Spoke Zarathustra, its a film that challenges and mesmerizes in equal measure. The special effects, ahead of their time, still hold up today, leaving audiences in awe of their sheer audacity. 2001: A Space Odyssey, its a landmark in cinema, a testament to the power of storytelling, and a timeless exploration of humanitys place in the cosmos.',
-    'Citizen Kane, a masterpiece of American cinema, stands as a towering achievement in storytelling and innovation. Orson Welles directorial debut is a revelation, a symphony of visual and narrative brilliance that continues to inspire filmmakers to this day. The films non-linear narrative and deep psychological exploration of its enigmatic protagonist, Charles Foster Kane, are executed with precision and insight. Welles use of deep focus and innovative camera techniques revolutionized the language of cinema, setting new standards for cinematic storytelling. Citizen Kane remains a timeless classic, its impact echoing through generations, inviting viewers to delve into the complexities of ambition, power, and the human condition.',
-    'Vertigo transcends the boundaries of mere suspense, delving deep into the labyrinth of obsession and desire. Hitchcocks mastery of visual storytelling is on full display, weaving a hypnotic web of intrigue that ensnares the viewer from start to finish. With every frame meticulously crafted, Vertigo is a haunting exploration of identity and illusion, leaving an indelible mark on cinema history. A mesmerizing masterpiece that continues to captivate audiences, revealing new layers with each viewing. In the words of Hitchcock himself, I enjoy playing the audience like a piano. And oh, how he plays it beautifully.'
-];
-
-var contentArray3 = [
-    'Listen up, people! Die Hard? Its the ultimate adrenaline-fueled thrill ride, baby! Bruce Willis, hes like a one-man wrecking crew, taking on terrorists with style and attitude. The action? Its off the charts, explosions galore, and every stunts like, Boom! Take that! Alan Rickman as the villain? Pure gold, man, pure gold. Youre on the edge of your seat the whole time, feeling the intensity like a punch to the gut. Die Hard, its not just a movie, its a full-blown action extravaganza thatll leave you cheering for more!',
-    'Alright, listen up, jabronis! Rocky, its not just a movie, its a knockout masterpiece! Sylvester Stallone, hes like a force of nature, rising from the mean streets of Philly to take on the champ with heart and determination. The training montages? Theyre like Rockys own personal anthem, pumping you up and making you believe anythings possible! And that final fight? Its like thunder and lightning crashing down in the ring, baby! Rocky, its not just about boxing, its about fighting for your dreams and never giving up. Its the peoples champion of movies, and itll leave you chanting Yo, Adrian! all night long!',
-    'Warriors, come out to play! The Warriors is an electrifying ride through the neon-lit streets of 1970s New York City. With adrenaline-pumping action and a gritty urban backdrop, this cult classic is a powerhouse of excitement. The Rocks muscles may be big, but theyve got nothing on the sheer muscle of this films raw intensity. Its a rollercoaster of survival and brotherhood thatll have you rooting for the underdogs every step of the way. Can you dig it? Absolutely.'
-];
-
-var contentArray4 = [
-    'Chungking Express... Whoa. This film, its like riding a rollercoaster through the streets of Hong Kong. The visuals, man, they hit you like a punch to the gut. Its like youre swept up in this whirlwind of neon lights, fast-paced action, and heartfelt moments. The way Wong Kar-wai captures the rhythm of the city, its like poetry in motion. And those characters, they stick with you, man. You feel their loneliness, their longing, their search for connection in this chaotic world. Chungking Express, its a trip you wont soon forget.',
-    'Whoa, dude, The Good, The Bad, and The Ugly... its like a wild ride into the heart of the Wild West. The landscapes, theyre vast and haunting, like something out of a dream. And the showdowns, theyre intense, like you can feel the tension crackling in the air. Clint Eastwood, man, hes just the epitome of cool in this film. The way he squints and handles that revolver, its iconic. And the music, its like its telling a story of its own, building up the suspense until its almost too much to handle. The Good, The Bad, and The Ugly... its a classic, bro, one you gotta experience for yourself.',
-    'Whoa, The Good, The Bad, and The Ugly... its like this epic journey across the blistering desert, man. The tension, its like a high noon standoff that lasts for days. Clint Eastwood, hes just, like, effortlessly cool, you know? And that Ennio Morricone score, its like its speaking directly to your soul, man. The cinematography, its like every frame is a work of art, painting this rugged, gritty world. The Good, The Bad, and The Ugly... its not just a movie, dude, its an experience.'
-];
-
-
-
-
-
-// Function to rotate content for a specific <p> element
-function rotateContentForP(pElement, contentArray) {
-    var currentIndex = contentArray.indexOf(pElement.textContent);
-    var nextIndex = (currentIndex + 1) % contentArray.length;
-    pElement.textContent = contentArray[nextIndex];
-
-    // Start fade-out
-    pElement.style.opacity = 1; // Start fully visible
-    (function fadeOut() {
-        if ((pElement.style.opacity -= 0.7) < 0) {
-            pElement.style.opacity = 0; // Ensure it's fully transparent
-            // Start fade-in after fade-out completes
-            (function fadeIn() {
-                if ((pElement.style.opacity += 0.7) > 1) {
-                    pElement.style.opacity = 1; // Ensure it's fully visible
-                } else {
-                    requestAnimationFrame(fadeIn);
-                }
-            })();
-        } else {
-            requestAnimationFrame(fadeOut);
-        }
-    })();
-}
-
-// Apply rotation to each <p> element within a content div
-document.querySelectorAll('.content').forEach(function(contentDiv, index) {
-    var pElement = contentDiv.querySelector('p');
-    var contentArray;
-    switch(index) {
-        case 0:
-            contentArray = contentArray1;
-            break;
-        case 1:
-            contentArray = contentArray2;
-            break;
-        case 2:
-            contentArray = contentArray3;
-            break;
-        case 3:
-            contentArray = contentArray4; // Added case for the fourth <p> element
-            break;
-    }
-
-
-    // Set initial content
-    pElement.textContent = contentArray[0];
-
-    // Rotate content every 8 seconds
-    setInterval(function() {
-        rotateContentForP(pElement, contentArray);
-    }, 8000);
-});
- 
 </script>
 
 <style>
-/* Initial state: fully transparent */
-.fade-in-out {
- opacity: .5;
- transition: opacity 1s ease-in-out;
-}
-
-/* Trigger state: fully opaque */
-.fade-in-out.active {
- opacity: 1;
-}
-
-/* Add bullet point image before each <p> element */
-.content p {
-    font-family: "Raleway", sans-serif;
-    font-weight: 400;
-    position: relative;
-    padding-left: 70px; /* Adjust as needed to make room for the bullet point image */
-    padding-bottom: 20px;
-    padding-right: 20px;
-    height: 200px; /* Set a fixed height for the <p> element */
-    line-height: 1.5; /* Adjust line height as needed for evenly spaced text */
-    margin: 14px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /* Limiting to 2 lines */
-    padding-left: 30px; /* Adjusted to indent the bullet point image */
-
-}
-.content p::before,
-.content p::after {
-    color: #e75250; 
-    content: '"';
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-    font-size: xx-large;
-    text-shadow: -1px -1px 0 #D1D5DB,  
-                 1px -1px 0 #D1D5DB,
-                 -1px 1px 0 #D1D5DB,
-                 1px 1px 0 #D1D5DB;
-                 
-
-}
-.username {
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-    outline-width: 2px;
-    color: #e75250;
-    font-size: larger;
-    text-shadow: -1px -1px 0 #D1D5DB,  
-                 1px -1px 0 #D1D5DB,
-                 -1px 1px 0 #D1D5DB,
-                 1px 1px 0 #D1D5DB;
-}
-.rosterlink {
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-    outline-width: 2px;
-    color: #e75250;
-    font-size: larger;
-    text-shadow: -1px -1px 0 #D1D5DB,  
-                 1px -1px 0 #D1D5DB,
-                 -1px 1px 0 #D1D5DB,
-                 1px 1px 0 #D1D5DB;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-top: 10px; /* Adjust as needed */
-    margin-right: 60px; /* Adjust as needed (to accommodate the image) */
-    padding-left: 50px; /* Adjust as needed (to accommodate the image) */
-    background-image: url('/images/logo.png'); /* Replace 'path/to/bullet-point-image.png' with the actual path to your bullet point image */
-    background-repeat: no-repeat;
-    background-position: left center; /* Adjust to place the image to the left */
-    background-size: auto 70%; /* Adjust the size of the bullet point image */
-    
-}
-.rosterlink:hover {
-    box-shadow: 0 0 30px #e75250;/* Increasing shadow on hover */
-}
-
-.content {
-
-}
-
-.search-bar-container {
-    margin-top: 20px; /* Adjust as needed */
-}
-
-.search-bar-container form {
-    position: relative;
-}
-
-.search-bar-container label {
-    display: none; /* Hide label for screen readers */
-}
-
-.search-bar-container input[type="search"] {
-    width: 100%;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    transition: border-color 0.3s ease;
-}
-
-.search-bar-container input[type="search"]:focus {
-    outline: none;
-    border-color: #e75250; /* Change border color on focus */
-}
-
-.search-bar-container button[type="submit"] {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #e75250;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.search-bar-container button[type="submit"]:hover {
-    background-color: #d04542; /* Darken background color on hover */
-}
-
-/* Adjustments for mobile devices */
-@media only screen and (max-width: 768px) {
-    .content {
-        margin-bottom: 40px; /* Add some margin to separate content boxes */
-        position: relative; /* Set position to relative */
-        height: auto; /* Set height to auto to accommodate variable content */
-    }
-    .content .movie-posters {
-        text-align: center; /* Center the movie posters */
-    }
-    .content .movie-posters img {
-        display: inline-block; /* Display movie posters inline */
-        margin: 5px; /* Add some margin between movie posters */
-    }
-   .content p {
-    padding: 20px;
-    position: relative;
-    height: auto;
-    clear: both; /* Clear any floats */
-    margin-top: 10px; /* Add margin to separate from the movie posters */
-}
-    .rosterlink {
-        position: absolute; /* Position the roster link absolutely */
-        bottom: 0; /* Align the roster link to the bottom */
-        left: 50%; /* Align the roster link to the center horizontally */
-        transform: translateX(-50%); /* Center the roster link horizontally */
-        margin: 10px 0; /* Add some margin to the roster link */
-    }
-}
+  /* Initial state: fully transparent */ .fade-in-out { opacity: .5; transition:
+  opacity 1s ease-in-out; } /* Trigger state: fully opaque */
+  .fade-in-out.active { opacity: 1; } /* Add bullet point image before each <p>
+  element */ .content p { font-family: "Raleway", sans-serif; font-weight: 400;
+  position: relative; padding-left: 70px; /* Adjust as needed to make room for
+  the bullet point image */ padding-bottom: 20px; padding-right: 20px; height:
+  200px; /* Set a fixed height for the <p> element */ line-height: 1.5; /*
+  Adjust line height as needed for evenly spaced text */ margin: 14px; overflow:
+  hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient:
+  vertical; -webkit-line-clamp: 2; /* Limiting to 2 lines */ padding-left: 30px;
+  /* Adjusted to indent the bullet point image */ } .content p::before, .content
+  p::after { color: #e75250; content: '"'; font-family: "Raleway", sans-serif;
+  font-weight: bold; font-size: xx-large; text-shadow: -1px -1px 0 #D1D5DB, 1px
+  -1px 0 #D1D5DB, -1px 1px 0 #D1D5DB, 1px 1px 0 #D1D5DB; } .username {
+  font-family: "Raleway", sans-serif; font-weight: bold; outline-width: 2px;
+  color: #e75250; font-size: larger; text-shadow: -1px -1px 0 #D1D5DB, 1px -1px
+  0 #D1D5DB, -1px 1px 0 #D1D5DB, 1px 1px 0 #D1D5DB; } .rosterlink { font-family:
+  "Raleway", sans-serif; font-weight: bold; outline-width: 2px; color: #e75250;
+  font-size: larger; text-shadow: -1px -1px 0 #D1D5DB, 1px -1px 0 #D1D5DB, -1px
+  1px 0 #D1D5DB, 1px 1px 0 #D1D5DB; position: absolute; bottom: 0; right: 0;
+  margin-top: 10px; /* Adjust as needed */ margin-right: 60px; /* Adjust as
+  needed (to accommodate the image) */ padding-left: 50px; /* Adjust as needed
+  (to accommodate the image) */ background-image: url('/images/logo.png'); /*
+  Replace 'path/to/bullet-point-image.png' with the actual path to your bullet
+  point image */ background-repeat: no-repeat; background-position: left center;
+  /* Adjust to place the image to the left */ background-size: auto 70%; /*
+  Adjust the size of the bullet point image */ } .rosterlink:hover { box-shadow:
+  0 0 30px #e75250;/* Increasing shadow on hover */ } .content { }
+  .search-bar-container { margin-top: 20px; /* Adjust as needed */ }
+  .search-bar-container form { position: relative; } .search-bar-container label
+  { display: none; /* Hide label for screen readers */ } .search-bar-container
+  input[type="search"] { width: 100%; padding: 10px 15px; font-size: 16px;
+  border: 1px solid #ccc; border-radius: 5px; background-color: #f8f8f8;
+  transition: border-color 0.3s ease; } .search-bar-container
+  input[type="search"]:focus { outline: none; border-color: #e75250; /* Change
+  border color on focus */ } .search-bar-container button[type="submit"] {
+  position: absolute; top: 50%; right: 10px; transform: translateY(-50%);
+  padding: 10px 15px; font-size: 16px; background-color: #e75250; color: #fff;
+  border: none; border-radius: 5px; cursor: pointer; transition:
+  background-color 0.3s ease; } .search-bar-container
+  button[type="submit"]:hover { background-color: #d04542; /* Darken background
+  color on hover */ } /* Adjustments for mobile devices */ @media only screen
+  and (max-width: 768px) { .content { margin-bottom: 40px; /* Add some margin to
+  separate content boxes */ position: relative; /* Set position to relative */
+  height: auto; /* Set height to auto to accommodate variable content */ }
+  .content .movie-posters { text-align: center; /* Center the movie posters */ }
+  .content .movie-posters img { display: inline-block; /* Display movie posters
+  inline */ margin: 5px; /* Add some margin between movie posters */ } .content
+  p { padding: 20px; position: relative; height: auto; clear: both; /* Clear any
+  floats */ margin-top: 10px; /* Add margin to separate from the movie posters
+  */ } .rosterlink { position: absolute; /* Position the roster link absolutely
+  */ bottom: 0; /* Align the roster link to the bottom */ left: 50%; /* Align
+  the roster link to the center horizontally */ transform: translateX(-50%); /*
+  Center the roster link horizontally */ margin: 10px 0; /* Add some margin to
+  the roster link */ } }
 
 </style>
 
 <script>
-let originalContent = [];
-$('.content.shadow-md').slice(0, 4).each(function() {
-  originalContent.push($(this).html());
-});
-
-let contentCounter = 0;
-
-$(window).scroll(function() {
-  if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-    addNewContentBox();
-  }
-});
-
-function addNewContentBox() {
-  const newBox = `<div class="content shadow-md">${originalContent[contentCounter % 4]}</div>`;
-  $('.content.shadow-md').last().after(newBox);
-  contentCounter++;
-}
-
+  let originalContent = []; $('.content.shadow-md').slice(0, 4).each(function()
+  { originalContent.push($(this).html()); }); let contentCounter = 0;
+  $(window).scroll(function() { if ($(window).scrollTop() + $(window).height() >
+  $(document).height() - 100) { addNewContentBox(); } }); function
+  addNewContentBox() { const newBox = `<div class="content
+  shadow-md">${originalContent[contentCounter % 4]}</div>`;
+  $('.content.shadow-md').last().after(newBox); contentCounter++; }
 
 </script>
 <style>
-/* Adjusted styles for the Home button, login/logout button, my roster button, and search box */
-.header-button a {
-    font-family: "Raleway", sans-serif !important;
-    font-weight: bold !important;
-    outline-width: 2px !important;
-    color: #e75250 !important;
-    font-size: larger !important;
-    text-shadow: -1px -1px 0 #D1D5DB,  
-                 1px -1px 0 #D1D5DB,
-                 -1px 1px 0 #D1D5DB,
-                 1px 1px 0 #D1D5DB !important;
-}
-
-.search-bar-container input[type="search"] {
-    width: 100%;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    transition: border-color 0.3s ease;
-    font-family: "Raleway", sans-serif !important; /* Added font family */
-}
-
-.search-bar-container button[type="submit"] {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #e75250;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: "Raleway", sans-serif !important; /* Added font family */
-}
-
-.search-bar-container button[type="submit"]:hover {
-    background-color: #d04542; /* Darken background color on hover */
-}
+  /* Adjusted styles for the Home button, login/logout button, my roster button,
+  and search box */ .header-button a { font-family: "Raleway", sans-serif
+  !important; font-weight: bold !important; outline-width: 2px !important;
+  color: #e75250 !important; font-size: larger !important; text-shadow: -1px
+  -1px 0 #D1D5DB, 1px -1px 0 #D1D5DB, -1px 1px 0 #D1D5DB, 1px 1px 0 #D1D5DB
+  !important; } .search-bar-container input[type="search"] { width: 100%;
+  padding: 10px 15px; font-size: 16px; border: 1px solid #ccc; border-radius:
+  5px; background-color: #f8f8f8; transition: border-color 0.3s ease;
+  font-family: "Raleway", sans-serif !important; /* Added font family */ }
+  .search-bar-container button[type="submit"] { position: absolute; top: 50%;
+  right: 10px; transform: translateY(-50%); padding: 10px 15px; font-size: 16px;
+  background-color: #e75250; color: #fff; border: none; border-radius: 5px;
+  cursor: pointer; transition: background-color 0.3s ease; font-family:
+  "Raleway", sans-serif !important; /* Added font family */ }
+  .search-bar-container button[type="submit"]:hover { background-color: #d04542;
+  /* Darken background color on hover */ }
 </style>
