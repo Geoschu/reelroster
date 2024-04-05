@@ -1,0 +1,136 @@
+<div class="bg-brightRed">
+    <!-- Handlebars Templates -->
+    <script id='movie-template' type='text/x-handlebars-template'>
+      <div class="bg-gray-200 rounded-lg shadow-md p-4 relative flex"> <div
+      class="bg-gray-200 rounded-lg overflow-hidden p-2" style="width: 400px;">
+      <img src="{{poster}}" alt="Movie Poster" class="object-cover w-full
+      h-full" /> </div> <div> <h2 class="text-xl font-semibold mb-2">{{title}}</h2>
+      <p class="text-gray-600">{{description}}</p> </div> </div>
+    </script>
+    <!-- Main Content -->
+    <main class='flex-grow flex flex-col'>
+      <!-- Movie Posters and Review -->
+      <div class='p-4 flex-grow'>
+        <div class='max-w-screen-lg mx-auto'>
+          <!-- Card with User Profile and Movie Posters -->
+          <div class='bg-white rounded-lg shadow-md p-4 relative'>
+            <div
+              class='absolute top-0 left-0 bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center'
+            >
+              <img
+                src='/images/scorsese.jpg'
+                alt='User Profile'
+                class='h-10 w-10 rounded-full'
+              />
+            </div>
+            <h2
+              class='text-2xl font-semibold mb-4 text-center'
+            >@scorsese</h2>
+            <div
+              id='movie-container'
+              class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-cols-min gap-4 mt-8'
+            >
+            <div class='movie-posters-roster'>
+      <img class='movie-poster-roster' src='/images/2001.jpg' alt='Movie Poster 1' />
+    </div>
+    <p id='content1-p'>"2001: A Space
+  Odyssey, its not just a film, its a transcendent experience, a journey into
+  the very depths of cinematic mastery. Stanley Kubricks vision, its like a
+  symphony of sight and sound, each frame meticulously crafted, every moment
+  pregnant with meaning. From the enigmatic monolith to the haunting strains of
+  Richard Strauss Thus Spoke Zarathustra, its a film that challenges and
+  mesmerizes in equal measure. The special effects, ahead of their time, still
+  hold up today, leaving audiences in awe of their sheer audacity. 2001: A Space
+  Odyssey, its a landmark in cinema, a testament to the power of storytelling,
+  and a timeless exploration of humanitys place in the cosmos."</p>
+  </div>
+  <div
+              class='absolute top-0 left-0 bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center'
+            >
+              <img
+                src='/images/scorsese.jpg'
+                alt='User Profile'
+                class='h-10 w-10 rounded-full'
+              />
+            </div>
+            <div
+              id='movie-container'
+              class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-cols-min gap-4 mt-8'
+            >
+            <div class='movie-posters-roster'>
+      <img class='movie-poster-roster' src='/images/citizenkane.jpg' alt='Movie Poster 1' />
+    </div>
+    <p id='content1-p'>"Citizen Kane,
+  a masterpiece of American cinema, stands as a towering achievement in
+  storytelling and innovation. Orson Welles directorial debut is a revelation, a
+  symphony of visual and narrative brilliance that continues to inspire
+  filmmakers to this day. The films non-linear narrative and deep psychological
+  exploration of its enigmatic protagonist, Charles Foster Kane, are executed
+  with precision and insight. Welles use of deep focus and innovative camera
+  techniques revolutionized the language of cinema, setting new standards for
+  cinematic storytelling. Citizen Kane remains a timeless classic, its impact
+  echoing through generations, inviting viewers to delve into the complexities
+  of ambition, power, and the human condition."</p>
+  </div>
+  <div
+              class='absolute top-0 left-0 bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center'
+            >
+              <img
+                src='/images/scorsese.jpg'
+                alt='User Profile'
+                class='h-10 w-10 rounded-full'
+              />
+            </div>
+            <div
+              id='movie-container'
+              class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-cols-min gap-4 mt-8'
+            >
+            <div class='movie-posters-roster'>
+      <img class='movie-poster-roster' src='/images/vertigo.jpg' alt='Movie Poster 1' />
+    </div>
+    <p id='content1-p'>"Vertigo transcends the
+  boundaries of mere suspense, delving deep into the labyrinth of obsession and
+  desire. Hitchcocks mastery of visual storytelling is on full display, weaving
+  a hypnotic web of intrigue that ensnares the viewer from start to finish. With
+  every frame meticulously crafted, Vertigo is a haunting exploration of
+  identity and illusion, leaving an indelible mark on cinema history. A
+  mesmerizing masterpiece that continues to captivate audiences, revealing new
+  layers with each viewing. In the words of Hitchcock himself, I enjoy playing
+  the audience like a piano. And oh, how he plays it beautifully."</p>
+  </div>
+  
+              <!-- Movies will be rendered here dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Handlebars.js -->
+    <script
+      src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js'
+    ></script>
+    <script>
+      // Sample data for movies const moviesData = [ { title: 'Movie Title 1',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+      non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
+      ultricies sed, dolor.', poster: '../../public/images/space_jam.jpg' }, {
+      title: 'Movie Title 2', description: 'Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+      dignissim sit amet, adipiscing nec, ultricies sed, dolor.', poster:
+      '../../public/images/dune_2.jpg' }, { title: 'Movie Title 3', description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+      Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies
+      sed, dolor.', poster: '../../public/images/dune.jpg' }, { title: 'Movie
+      Title 4', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
+      adipiscing nec, ultricies sed, dolor.', poster:
+      '../../public/images/space_jam.jpg' }, // Add more movie data here as
+      needed ]; // Compile Handlebars template const movieTemplate =
+      Handlebars.compile(document.getElementById("movie-template").innerHTML);
+      // Render movies moviesData.forEach(movie => { const html =
+      movieTemplate(movie);
+      document.getElementById("movie-container").insertAdjacentHTML('beforeend',
+      html); });
+    </script>
+  </div>
+</html>

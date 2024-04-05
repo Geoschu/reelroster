@@ -157,6 +157,13 @@ body {
     height: 300px; /* Set a fixed height for the movie poster container */
     
 }
+.movie-poster-roster {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Create a grid with three columns */
+    grid-gap: 20px; /* Adds gap between grid items */
+    height: 300px; /* Set a fixed height for the movie poster container */
+    
+}
 .movie-title{
     font-family: "Raleway", sans-serif;
     font-weight: bold;
@@ -187,7 +194,17 @@ body {
     margin: 5px;
     
 }
-
+.movie-poster-roster {
+    display: flex;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 15px;
+    padding: 1px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow with increased blur and spread */
+    outline: 2.5px solid #e75250; /* Add outline */
+    margin: 5px;
+    justify-self: center;
+    margin-left: 150px;
+}
 .movie-poster:hover {
     box-shadow: 0 0 30px #e75250;/* Increasing shadow on hover */
 }

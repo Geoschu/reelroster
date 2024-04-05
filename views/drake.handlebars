@@ -1,0 +1,144 @@
+<div class="bg-brightRed">
+    <!-- Handlebars Templates -->
+    <script id='movie-template' type='text/x-handlebars-template'>
+      <div class="bg-gray-200 rounded-lg shadow-md p-4 relative flex"> <div
+      class="bg-gray-200 rounded-lg overflow-hidden p-2" style="width: 400px;">
+      <img src="{{poster}}" alt="Movie Poster" class="object-cover w-full
+      h-full" /> </div> <div> <h2 class="text-xl font-semibold mb-2">{{title}}</h2>
+      <p class="text-gray-600">{{description}}</p> </div> </div>
+    </script>
+    <!-- Main Content -->
+    <main class='flex-grow flex flex-col'>
+      <!-- Movie Posters and Review -->
+      <div class='p-4 flex-grow'>
+        <div class='max-w-screen-lg mx-auto'>
+          <!-- Card with User Profile and Movie Posters -->
+          <div class='bg-white rounded-lg shadow-md p-4 relative'>
+            <div
+              class='absolute top-0 left-0 bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center'
+            >
+              <img
+                src='/images/drake.jpg'
+                alt='User Profile'
+                class='h-10 w-10 rounded-full'
+              />
+            </div>
+            <h2
+              class='text-2xl font-semibold mb-4 text-center'
+            >@champagnepapi</h2>
+            <div
+              id='movie-container'
+              class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-cols-min gap-4 mt-8'
+            >
+            <div class='movie-posters-roster'>
+      <img class='movie-poster-roster' src='/images/dune.jpg' alt='Movie Poster 1' />
+      {{!-- <img class='movie-poster' src='/images/dune_2.jpg' alt='Movie Poster 2' />
+      <img
+        class='movie-poster'
+        src='/images/space_jam.jpg'
+        alt='Movie Poster 3'
+      /> --}}
+    </div>
+    <p id='content1-p'>"Dune is an interstellar journey that's out of this
+      world. From the desert sands to the cosmic depths, it's a visual feast
+      that's as epic as a chart-topping track. With mind-bending effects and a
+      stellar cast, this sci-fi saga transports you to realms beyond
+      imagination. Whether you're a spice aficionado or a seeker of destiny,
+      Dune delivers the goods with style and swagger. Strap in for a cinematic
+      ride that's as smooth as my flow - this one's a certified banger."</p>
+  </div>
+  <div
+              class='absolute top-0 left-0 bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center'
+            >
+              <img
+                src='/images/drake.jpg'
+                alt='User Profile'
+                class='h-10 w-10 rounded-full'
+              />
+            </div>
+            <div
+              id='movie-container'
+              class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-cols-min gap-4 mt-8'
+            >
+            <div class='movie-posters-roster'>
+      <img class='movie-poster-roster' src='/images/space_jam.jpg' alt='Movie Poster 1' />
+      {{!-- <img class='movie-poster' src='/images/dune_2.jpg' alt='Movie Poster 2' />
+      <img
+        class='movie-poster'
+        src='/images/space_jam.jpg'
+        alt='Movie Poster 3'
+      /> --}}
+    </div>
+    <p id='content1-p'>"Space Jam is a slam dunk of nostalgia and fun! From the court to the cartoon
+  cosmos, this flick blends b-ball with Looney Tunes in the sickest crossover
+  ever. With laughs, jams, and a vibe thats out of this world, its a flick that
+  hits all the right notes. Whether youre ballin like MJ or just chillig with
+  Bugs, Space Jam brings the hype. So lace up your kicks and get ready to fly -
+  this movies got game!"</p>
+  </div>
+  <div
+              class='absolute top-0 left-0 bg-gray-300 rounded-full h-12 w-12 flex items-center justify-center'
+            >
+              <img
+                src='/images/drake.jpg'
+                alt='User Profile'
+                class='h-10 w-10 rounded-full'
+              />
+            </div>
+            <div
+              id='movie-container'
+              class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-auto-cols-min gap-4 mt-8'
+            >
+            <div class='movie-posters-roster'>
+      <img class='movie-poster-roster' src='/images/dune_2.jpg' alt='Movie Poster 1' />
+      {{!-- <img class='movie-poster' src='' alt='Movie Poster 2' />
+      <img
+        class='movie-poster'
+        src='/images/space_jam.jpg'
+        alt='Movie Poster 3'
+      /> --}}
+    </div>
+    <p id='content1-p'>"Dune Part 2 aint just a sequel, its a whole new
+  universe. From the sands of Arrakis to the depths of political intrigue, this
+  flick keeps the vibes lit. With epic battles and plot twists sharper than a
+  fresh fade, its a journey thatll leave you craving more. Whether youre a
+  Fremen warrior or just vibing with the spice, this movies got something for
+  everyone. So grab your popcorn and get ready to ride the sandworm - Dune Part
+  2 is the wave you dont wanna miss."</p>
+  </div>
+  
+              <!-- Movies will be rendered here dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Handlebars.js -->
+    <script
+      src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js'
+    ></script>
+    <script>
+      // Sample data for movies const moviesData = [ { title: 'Movie Title 1',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+      non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,
+      ultricies sed, dolor.', poster: '../../public/images/space_jam.jpg' }, {
+      title: 'Movie Title 2', description: 'Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+      dignissim sit amet, adipiscing nec, ultricies sed, dolor.', poster:
+      '../../public/images/dune_2.jpg' }, { title: 'Movie Title 3', description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+      Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies
+      sed, dolor.', poster: '../../public/images/dune.jpg' }, { title: 'Movie
+      Title 4', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
+      adipiscing nec, ultricies sed, dolor.', poster:
+      '../../public/images/space_jam.jpg' }, // Add more movie data here as
+      needed ]; // Compile Handlebars template const movieTemplate =
+      Handlebars.compile(document.getElementById("movie-template").innerHTML);
+      // Render movies moviesData.forEach(movie => { const html =
+      movieTemplate(movie);
+      document.getElementById("movie-container").insertAdjacentHTML('beforeend',
+      html); });
+    </script>
+  </div>
+</html>

@@ -91,4 +91,13 @@ router.get('/signup', (req, res) => {
 //   res.redirect('myroster');
 // });
 
+router.get('/drake', (req, res) => {
+
+  res.render('drake');
+ });
+ router.get('/scoresese', (req, res) => {
+
+  res.render('scoresese');
+ });
+
 module.exports = router;
