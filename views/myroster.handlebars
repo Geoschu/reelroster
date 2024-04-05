@@ -1,32 +1,51 @@
 <div class='bg-red-500 min-h-screen flex justify-center items-center'>
   <div class='bg-white p-8 rounded-lg shadow-md w-full max-w-md'>
-    <h3 class="text-center font-semibold text-2xl text-gray-800">Add to Roster</h3>
+    <h3 class='text-center font-semibold text-2xl text-gray-800'>Add to Roster</h3>
 
-    <form class="mt-4 space-y-4">
+    <form class='mt-4 space-y-4'>
       <div>
-        <label class="block text-sm font-medium text-gray-700">Movie Title</label>
-        <input class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" type="text" id="movie-name"/>
+        <label class='block text-sm font-medium text-gray-700'>Movie Title</label>
+        <input
+          class='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
+          type='text'
+          id='movie-name'
+        />
       </div>
       <div>
-        <label class="block text-sm font-medium text-gray-700">Roster Ranking</label>
-        <input class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" type="number" id="roster-ranking"/>
+        <label class='block text-sm font-medium text-gray-700'>Roster Ranking</label>
+        <input
+          class='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
+          type='number'
+          id='roster-ranking'
+        />
       </div>
       <div>
-        <label class="block text-sm font-medium text-gray-700">Review</label>
-        <textarea class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" id="roster-review"></textarea>
+        <label class='block text-sm font-medium text-gray-700'>Review</label>
+        <textarea
+          class='mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500'
+          id='roster-review'
+        ></textarea>
       </div>
-      <div class="flex justify-center">
-        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Create</button>
+      <div class='flex justify-center'>
+        <button
+          type='submit'
+          class='px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'
+        >Create</button>
       </div>
     </form>
   </div>
 </div>
 <div class='bg-gray-100 p-4 mt-8'>
-  <h3 class="text-lg font-semibold text-gray-800">My Roster</h3>
-  <div class="mt-2">
-    <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow mb-2">
-      <h4 class="text-md font-medium text-gray-800">Movie Title</h4>
-      <button class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">DELETE</button>
+  <h3 class='text-lg font-semibold text-gray-800'>My Roster</h3>
+  <div class='mt-2'>
+    <div
+      class='flex justify-between items-center bg-white p-4 rounded-lg shadow mb-2'
+    >
+      <h4 class='text-md font-medium text-gray-800'>Movie Title</h4>
+      <button
+        class='px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50'
+      >DELETE</button>
     </div>
   </div>
+  <script src='./js/myroster.js'></script>
 </div>
