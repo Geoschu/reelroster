@@ -15,38 +15,48 @@
         <div class="wrapper">
             <div class="below-header">
                 <div class="Home button">
-                    <a href="/" class="mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Home</a>
-                </div>
-               <div class="My Roster">
-                    {{#if logged_in}}
-                    <a href="/myroster" class=" mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">My Roster</a>
-                    {{else}}
-                    <a href="/login" class="header-button mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Sign Up/Login</a>
-                    {{/if}}
-                </div>
-                <div class="header-button">
-                    {{#if logged_in}}
-                    <a href="/logout" class="header-button mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded" id="logout">Log out</a>
-                    {{/if}}
-                </div>
-                <div class="search-bar-container">
-                    <form class="max-w-md mx-auto">   
-                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                        <div class="relative">
-                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                                </svg>
-                            </div>
-                            <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-rose-500 focus:border-rose-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-rose-500 dark:focus:border-rose-500" placeholder="Search Movies, Creators..." required />
-                            <button type="submit" class="text-black absolute end-2.5 bottom-2.5 bg-rose-500 hover:bg-rose-200 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-rose-500 dark:hover:bg-rose-200 dark:focus:ring-rose-200">Search</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="mobile-container">
-                    <div class="header-button-mobile">
-                        <a href="/login" class="mx-2 bg-rose-500 hover:bg-rose-200 text-black font-bold py-2 px-4 rounded">Sign Up/Login</a>
-                    </div>
+    <a href="/" class="mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300">Home</a>
+</div>
+
+<div class="My Roster">
+    {{#if logged_in}}
+    <a href="/myroster" class="mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300">My Roster</a>
+    {{else}}
+    <a href="/login" class="header-button mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300">Sign Up/Login</a>
+    {{/if}}
+</div>
+
+<div class="header-button">
+    {{#if logged_in}}
+    <a href="/logout" class="header-button mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300" id="logout">Log out</a>
+    {{/if}}
+</div>
+
+<div class="search-bar-container">
+    <form class="max-w-md mx-auto">   
+        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+        <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center pl-5 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+            <input type="search" id="default-search" class="block p-4 pl-14 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-rose-500 focus:border-rose-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-rose-500 dark:focus:border-rose-500 transition duration-300" placeholder="Search Movies, Creators..." style="width: 400px;" required />
+            <button type="submit" class="text-white absolute end-.5 bottom-.5 bg-rose-500 hover:bg-rose-600 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-rose-500 dark:hover:bg-rose-600 dark:focus:ring-rose-200 transition duration-300">Search</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<div class="mobile-container">
+    <div class="header-button-mobile">
+        <a href="/login" class="mx-2 bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-4 rounded transition duration-300">Sign Up/Login</a>
+    </div>
+</div>
+
             </div> <!-- idk why but deleting this messes up the below-header class -->
             
            </div>  <!-- idk why but deleting this messes up the below-header class -->
@@ -342,6 +352,7 @@ document.querySelectorAll('.content').forEach(function(contentDiv, index) {
     .content {
         margin-bottom: 40px; /* Add some margin to separate content boxes */
         position: relative; /* Set position to relative */
+        height: auto; /* Set height to auto to accommodate variable content */
     }
     .content .movie-posters {
         text-align: center; /* Center the movie posters */
@@ -350,14 +361,13 @@ document.querySelectorAll('.content').forEach(function(contentDiv, index) {
         display: inline-block; /* Display movie posters inline */
         margin: 5px; /* Add some margin between movie posters */
     }
-      .content p {
-        padding: 20px; /* Add padding to the paragraph */
-        position: absolute; /* Position the paragraph absolutely */
-        bottom: 0; /* Align the paragraph to the bottom */
-        left: 10%; /* Align the paragraph to the center horizontally */
-        top: 20%;
-     
-    }
+   .content p {
+    padding: 20px;
+    position: relative;
+    height: auto;
+    clear: both; /* Clear any floats */
+    margin-top: 10px; /* Add margin to separate from the movie posters */
+}
     .rosterlink {
         position: absolute; /* Position the roster link absolutely */
         bottom: 0; /* Align the roster link to the bottom */
@@ -366,6 +376,7 @@ document.querySelectorAll('.content').forEach(function(contentDiv, index) {
         margin: 10px 0; /* Add some margin to the roster link */
     }
 }
+
 </style>
 
 <script>
@@ -388,4 +399,50 @@ function addNewContentBox() {
   contentCounter++;
 }
 
+
 </script>
+<style>
+/* Adjusted styles for the Home button, login/logout button, my roster button, and search box */
+.header-button a {
+    font-family: "Raleway", sans-serif !important;
+    font-weight: bold !important;
+    outline-width: 2px !important;
+    color: #e75250 !important;
+    font-size: larger !important;
+    text-shadow: -1px -1px 0 #D1D5DB,  
+                 1px -1px 0 #D1D5DB,
+                 -1px 1px 0 #D1D5DB,
+                 1px 1px 0 #D1D5DB !important;
+}
+
+.search-bar-container input[type="search"] {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    transition: border-color 0.3s ease;
+    font-family: "Raleway", sans-serif !important; /* Added font family */
+}
+
+.search-bar-container button[type="submit"] {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #e75250;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Raleway", sans-serif !important; /* Added font family */
+}
+
+.search-bar-container button[type="submit"]:hover {
+    background-color: #d04542; /* Darken background color on hover */
+}
+</style>
