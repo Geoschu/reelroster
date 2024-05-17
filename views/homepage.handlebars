@@ -55,7 +55,7 @@
             class='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white'
           >Search</label>
           <div class='relative'>
-            <div
+            <div>
               class='absolute inset-y-0 start-0 flex items-center pl-5 pointer-events-none'
             >
               <svg
@@ -236,116 +236,84 @@
   </div>
 </div>\
 <script src='/js/movie-recent.js'></script>
-<script>// Array of content to rotate var contentArray1 = [ 'Dune is an
-  interstellar journey thats out of this world. From the desert sands to the
-  cosmic depths, its a visual feast thats as epic as a chart-topping track. With
-  mind-bending effects and a stellar cast, this sci-fi saga transports you to
-  realms beyond imagination. Whether youre a spice aficionado or a seeker of
-  destiny, Dune delivers the goods with style and swagger. Strap in for a
-  cinematic ride thats as smooth as my flow - this ones a certified banger.',
-  'Space Jam is a slam dunk of nostalgia and fun! From the court to the cartoon
-  cosmos, this flick blends b-ball with Looney Tunes in the sickest crossover
-  ever. With laughs, jams, and a vibe thats out of this world, its a flick that
-  hits all the right notes. Whether youre ballin like MJ or just chillig with
-  Bugs, Space Jam brings the hype. So lace up your kicks and get ready to fly -
-  this movies got game!', 'Dune Part 2 aint just a sequel, its a whole new
-  universe. From the sands of Arrakis to the depths of political intrigue, this
-  flick keeps the vibes lit. With epic battles and plot twists sharper than a
-  fresh fade, its a journey thatll leave you craving more. Whether youre a
-  Fremen warrior or just vibing with the spice, this movies got something for
-  everyone. So grab your popcorn and get ready to ride the sandworm - Dune Part
-  2 is the wave you dont wanna miss.' ]; var contentArray2 = [ '2001: A Space
-  Odyssey, its not just a film, its a transcendent experience, a journey into
-  the very depths of cinematic mastery. Stanley Kubricks vision, its like a
-  symphony of sight and sound, each frame meticulously crafted, every moment
-  pregnant with meaning. From the enigmatic monolith to the haunting strains of
-  Richard Strauss Thus Spoke Zarathustra, its a film that challenges and
-  mesmerizes in equal measure. The special effects, ahead of their time, still
-  hold up today, leaving audiences in awe of their sheer audacity. 2001: A Space
-  Odyssey, its a landmark in cinema, a testament to the power of storytelling,
-  and a timeless exploration of humanitys place in the cosmos.', 'Citizen Kane,
-  a masterpiece of American cinema, stands as a towering achievement in
-  storytelling and innovation. Orson Welles directorial debut is a revelation, a
-  symphony of visual and narrative brilliance that continues to inspire
-  filmmakers to this day. The films non-linear narrative and deep psychological
-  exploration of its enigmatic protagonist, Charles Foster Kane, are executed
-  with precision and insight. Welles use of deep focus and innovative camera
-  techniques revolutionized the language of cinema, setting new standards for
-  cinematic storytelling. Citizen Kane remains a timeless classic, its impact
-  echoing through generations, inviting viewers to delve into the complexities
-  of ambition, power, and the human condition.', 'Vertigo transcends the
-  boundaries of mere suspense, delving deep into the labyrinth of obsession and
-  desire. Hitchcocks mastery of visual storytelling is on full display, weaving
-  a hypnotic web of intrigue that ensnares the viewer from start to finish. With
-  every frame meticulously crafted, Vertigo is a haunting exploration of
-  identity and illusion, leaving an indelible mark on cinema history. A
-  mesmerizing masterpiece that continues to captivate audiences, revealing new
-  layers with each viewing. In the words of Hitchcock himself, I enjoy playing
-  the audience like a piano. And oh, how he plays it beautifully.' ]; var
-  contentArray3 = [ 'Listen up, people! Die Hard? Its the ultimate
-  adrenaline-fueled thrill ride, baby! Bruce Willis, hes like a one-man wrecking
-  crew, taking on terrorists with style and attitude. The action? Its off the
-  charts, explosions galore, and every stunts like, Boom! Take that! Alan
-  Rickman as the villain? Pure gold, man, pure gold. Youre on the edge of your
-  seat the whole time, feeling the intensity like a punch to the gut. Die Hard,
-  its not just a movie, its a full-blown action extravaganza thatll leave you
-  cheering for more!', 'Alright, listen up, jabronis! Rocky, its not just a
-  movie, its a knockout masterpiece! Sylvester Stallone, hes like a force of
-  nature, rising from the mean streets of Philly to take on the champ with heart
-  and determination. The training montages? Theyre like Rockys own personal
-  anthem, pumping you up and making you believe anythings possible! And that
-  final fight? Its like thunder and lightning crashing down in the ring, baby!
-  Rocky, its not just about boxing, its about fighting for your dreams and never
-  giving up. Its the peoples champion of movies, and itll leave you chanting Yo,
-  Adrian! all night long!', 'Warriors, come out to play! The Warriors is an
-  electrifying ride through the neon-lit streets of 1970s New York City. With
-  adrenaline-pumping action and a gritty urban backdrop, this cult classic is a
-  powerhouse of excitement. The Rocks muscles may be big, but theyve got nothing
-  on the sheer muscle of this films raw intensity. Its a rollercoaster of
-  survival and brotherhood thatll have you rooting for the underdogs every step
-  of the way. Can you dig it? Absolutely.' ]; var contentArray4 = [ 'Chungking
-  Express... Whoa. This film, its like riding a rollercoaster through the
-  streets of Hong Kong. The visuals, man, they hit you like a punch to the gut.
-  Its like youre swept up in this whirlwind of neon lights, fast-paced action,
-  and heartfelt moments. The way Wong Kar-wai captures the rhythm of the city,
-  its like poetry in motion. And those characters, they stick with you, man. You
-  feel their loneliness, their longing, their search for connection in this
-  chaotic world. Chungking Express, its a trip you wont soon forget.', 'Whoa,
-  dude, The Good, The Bad, and The Ugly... its like a wild ride into the heart
-  of the Wild West. The landscapes, theyre vast and haunting, like something out
-  of a dream. And the showdowns, theyre intense, like you can feel the tension
-  crackling in the air. Clint Eastwood, man, hes just the epitome of cool in
-  this film. The way he squints and handles that revolver, its iconic. And the
-  music, its like its telling a story of its own, building up the suspense until
-  its almost too much to handle. The Good, The Bad, and The Ugly... its a
-  classic, bro, one you gotta experience for yourself.', 'Whoa, The Good, The
-  Bad, and The Ugly... its like this epic journey across the blistering desert,
-  man. The tension, its like a high noon standoff that lasts for days. Clint
-  Eastwood, hes just, like, effortlessly cool, you know? And that Ennio
-  Morricone score, its like its speaking directly to your soul, man. The
-  cinematography, its like every frame is a work of art, painting this rugged,
-  gritty world. The Good, The Bad, and The Ugly... its not just a movie, dude,
-  its an experience.' ]; // Function to rotate content for a specific <p>
-  element function rotateContentForP(pElement, contentArray) { var currentIndex
-  = contentArray.indexOf(pElement.textContent); var nextIndex = (currentIndex +
-  1) % contentArray.length; pElement.textContent = contentArray[nextIndex]; //
-  Start fade-out pElement.style.opacity = 1; // Start fully visible (function
-  fadeOut() { if ((pElement.style.opacity -= 0.7) < 0) { pElement.style.opacity
-  = 0; // Ensure it's fully transparent // Start fade-in after fade-out
-  completes (function fadeIn() { if ((pElement.style.opacity += 0.7) > 1) {
-  pElement.style.opacity = 1; // Ensure it's fully visible } else {
-  requestAnimationFrame(fadeIn); } })(); } else {
-  requestAnimationFrame(fadeOut); } })(); } // Apply rotation to each <p>
-  element within a content div
-  document.querySelectorAll('.content').forEach(function(contentDiv, index) {
-  var pElement = contentDiv.querySelector('p'); var contentArray; switch(index)
-  { case 0: contentArray = contentArray1; break; case 1: contentArray =
-  contentArray2; break; case 2: contentArray = contentArray3; break; case 3:
-  contentArray = contentArray4; // Added case for the fourth <p> element break;
-  } // Set initial content pElement.textContent = contentArray[0]; // Rotate
-  content every 8 seconds setInterval(function() { rotateContentForP(pElement,
-  contentArray); }, 8000); });
+ <script>// Array of content to rotate
+var contentArray1 = [
+    'Dune is an interstellar journey thats out of this world. From the desert sands to the cosmic depths, its a visual feast thats as epic as a chart-topping track. With mind-bending effects and a stellar cast, this sci-fi saga transports you to realms beyond imagination. Whether youre a spice aficionado or a seeker of destiny, Dune delivers the goods with style and swagger. Strap in for a cinematic ride thats as smooth as my flow - this ones a certified banger.',
+    'Space Jam is a slam dunk of nostalgia and fun! From the court to the cartoon cosmos, this flick blends b-ball with Looney Tunes in the sickest crossover ever. With laughs, jams, and a vibe thats out of this world, its a flick that hits all the right notes. Whether youre ballin like MJ or just chillig with Bugs, Space Jam brings the hype. So lace up your kicks and get ready to fly - this movies got game!',
+    'Dune Part 2 aint just a sequel, its a whole new universe. From the sands of Arrakis to the depths of political intrigue, this flick keeps the vibes lit. With epic battles and plot twists sharper than a fresh fade, its a journey thatll leave you craving more. Whether youre a Fremen warrior or just vibing with the spice, this movies got something for everyone. So grab your popcorn and get ready to ride the sandworm - Dune Part 2 is the wave you dont wanna miss.'
+];
 
+var contentArray2 = [
+    '2001: A Space Odyssey, its not just a film, its a transcendent experience, a journey into the very depths of cinematic mastery. Stanley Kubricks vision, its like a symphony of sight and sound, each frame meticulously crafted, every moment pregnant with meaning. From the enigmatic monolith to the haunting strains of Richard Strauss Thus Spoke Zarathustra, its a film that challenges and mesmerizes in equal measure. The special effects, ahead of their time, still hold up today, leaving audiences in awe of their sheer audacity. 2001: A Space Odyssey, its a landmark in cinema, a testament to the power of storytelling, and a timeless exploration of humanitys place in the cosmos.',
+    'Citizen Kane, a masterpiece of American cinema, stands as a towering achievement in storytelling and innovation. Orson Welles directorial debut is a revelation, a symphony of visual and narrative brilliance that continues to inspire filmmakers to this day. The films non-linear narrative and deep psychological exploration of its enigmatic protagonist, Charles Foster Kane, are executed with precision and insight. Welles use of deep focus and innovative camera techniques revolutionized the language of cinema, setting new standards for cinematic storytelling. Citizen Kane remains a timeless classic, its impact echoing through generations, inviting viewers to delve into the complexities of ambition, power, and the human condition.',
+    'Vertigo transcends the boundaries of mere suspense, delving deep into the labyrinth of obsession and desire. Hitchcocks mastery of visual storytelling is on full display, weaving a hypnotic web of intrigue that ensnares the viewer from start to finish. With every frame meticulously crafted, Vertigo is a haunting exploration of identity and illusion, leaving an indelible mark on cinema history. A mesmerizing masterpiece that continues to captivate audiences, revealing new layers with each viewing. In the words of Hitchcock himself, I enjoy playing the audience like a piano. And oh, how he plays it beautifully.'
+];
+
+var contentArray3 = [
+    'Listen up, people! Die Hard? Its the ultimate adrenaline-fueled thrill ride, baby! Bruce Willis, hes like a one-man wrecking crew, taking on terrorists with style and attitude. The action? Its off the charts, explosions galore, and every stunts like, Boom! Take that! Alan Rickman as the villain? Pure gold, man, pure gold. Youre on the edge of your seat the whole time, feeling the intensity like a punch to the gut. Die Hard, its not just a movie, its a full-blown action extravaganza thatll leave you cheering for more!',
+    'Alright, listen up, jabronis! Rocky, its not just a movie, its a knockout masterpiece! Sylvester Stallone, hes like a force of nature, rising from the mean streets of Philly to take on the champ with heart and determination. The training montages? Theyre like Rockys own personal anthem, pumping you up and making you believe anythings possible! And that final fight? Its like thunder and lightning crashing down in the ring, baby! Rocky, its not just about boxing, its about fighting for your dreams and never giving up. Its the peoples champion of movies, and itll leave you chanting Yo, Adrian! all night long!',
+    'Warriors, come out to play! The Warriors is an electrifying ride through the neon-lit streets of 1970s New York City. With adrenaline-pumping action and a gritty urban backdrop, this cult classic is a powerhouse of excitement. The Rocks muscles may be big, but theyve got nothing on the sheer muscle of this films raw intensity. Its a rollercoaster of survival and brotherhood thatll have you rooting for the underdogs every step of the way. Can you dig it? Absolutely.'
+];
+
+var contentArray4 = [
+    'Chungking Express... Whoa. This film, its like riding a rollercoaster through the streets of Hong Kong. The visuals, man, they hit you like a punch to the gut. Its like youre swept up in this whirlwind of neon lights, fast-paced action, and heartfelt moments. The way Wong Kar-wai captures the rhythm of the city, its like poetry in motion. And those characters, they stick with you, man. You feel their loneliness, their longing, their search for connection in this chaotic world. Chungking Express, its a trip you wont soon forget.',
+    'Whoa, dude, The Good, The Bad, and The Ugly... its like a wild ride into the heart of the Wild West. The landscapes, theyre vast and haunting, like something out of a dream. And the showdowns, theyre intense, like you can feel the tension crackling in the air. Clint Eastwood, man, hes just the epitome of cool in this film. The way he squints and handles that revolver, its iconic. And the music, its like its telling a story of its own, building up the suspense until its almost too much to handle. The Good, The Bad, and The Ugly... its a classic, bro, one you gotta experience for yourself.',
+    'Whoa, The Good, The Bad, and The Ugly... its like this epic journey across the blistering desert, man. The tension, its like a high noon standoff that lasts for days. Clint Eastwood, hes just, like, effortlessly cool, you know? And that Ennio Morricone score, its like its speaking directly to your soul, man. The cinematography, its like every frame is a work of art, painting this rugged, gritty world. The Good, The Bad, and The Ugly... its not just a movie, dude, its an experience.'
+]; 
+// Function to rotate content for a specific <p> element
+function rotateContentForP(pElement, contentArray) {
+    var currentIndex = contentArray.indexOf(pElement.textContent);
+    var nextIndex = (currentIndex + 1) % contentArray.length;
+    pElement.textContent = contentArray[nextIndex];
+
+    // Start fade-out
+    pElement.style.opacity = 1; // Start fully visible
+    (function fadeOut() {
+        if ((pElement.style.opacity -= 0.7) < 0) {
+            pElement.style.opacity = 0; // Ensure it's fully transparent
+            // Start fade-in after fade-out completes
+            (function fadeIn() {
+                if ((pElement.style.opacity += 0.7) > 1) {
+                    pElement.style.opacity = 1; // Ensure it's fully visible
+                } else {
+                    requestAnimationFrame(fadeIn);
+                }
+            })();
+        } else {
+            requestAnimationFrame(fadeOut);
+        }
+    })();
+}
+
+// Apply rotation to each <p> element within a content div
+document.querySelectorAll('.content').forEach(function(contentDiv, index) {
+    var pElement = contentDiv.querySelector('p');
+    var contentArray;
+    switch(index) {
+        case 0:
+            contentArray = contentArray1;
+            break;
+        case 1:
+            contentArray = contentArray2;
+            break;
+        case 2:
+            contentArray = contentArray3;
+            break;
+        case 3:
+            contentArray = contentArray4; // Added case for the fourth <p> element
+            break;
+    }
+
+
+    // Set initial content
+    pElement.textContent = contentArray[0];
+
+    // Rotate content every 8 seconds
+    setInterval(function() {
+        rotateContentForP(pElement, contentArray);
+    }, 8000);
+});
+ 
 </script>
 
 <style>
